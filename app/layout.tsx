@@ -1,36 +1,57 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
+import { Inter, JetBrains_Mono, Space_Grotesk } from 'next/font/google'
+import { SiteNav } from '@/components/site-nav'
+import { SiteFooter } from '@/components/site-footer'
+import { profile } from '@/lib/content/profile'
 import './globals.css'
 
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-space-grotesk',
+})
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-jetbrains-mono',
+})
+
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
+  title: {
+    default: 'Emmanuel Chinjekure — Full-Stack Developer & Systems Administrator',
+    template: '%s — Emmanuel Chinjekure',
+  },
+  description:
+    'Full-stack developer, systems administrator, and cybersecurity enthusiast based in Harare, Zimbabwe. IT Intern at Cimas Health Group and B.Tech IT student at Harare Institute of Technology.',
   generator: 'v0.app',
-  icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+  openGraph: {
+    title: 'Emmanuel Chinjekure — Full-Stack Developer & Systems Administrator',
+    description:
+      'Full-stack development, homelab infrastructure, and cybersecurity. Based in Harare, Zimbabwe.',
+    type: 'website',
   },
 }
 
 export const viewport: Viewport = {
-  colorScheme: 'light dark',
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: 'white' },
-    { media: '(prefers-color-scheme: dark)', color: 'black' },
-  ],
+  colorScheme: 'dark',
+  themeColor: '#0d1117',
+}
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: profile.fullName,
+  jobTitle: profile.title,
+  email: `mailto:${profile.email}`,
+  telephone: profile.phone,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Harare',
+    addressCountry: 'ZW',
+  },
+  url: profile.siteUrl,
+  sameAs: [profile.links.github, profile.links.linkedin],
+  alumniOf: 'Harare Institute of Technology',
 }
 
 export default function RootLayout({
@@ -39,9 +60,19 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={`dark bg-background ${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}
+    >
       <body className="antialiased">
+        <script
+          type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        />
+        <SiteNav />
         {children}
+        <SiteFooter />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
