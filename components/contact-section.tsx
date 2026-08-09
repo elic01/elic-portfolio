@@ -1,4 +1,5 @@
-import { Github, Linkedin, Mail, MapPin, Phone } from 'lucide-react'
+import { Mail, MapPin, Phone } from 'lucide-react'
+import { GithubIcon, LinkedinIcon } from '@/components/brand-icons'
 import { profile } from '@/lib/content/profile'
 import { ContactForm } from '@/components/contact-form'
 import { Reveal } from '@/components/reveal'
@@ -53,7 +54,7 @@ export function ContactSection({ headingId = 'contact-heading' }: { headingId?: 
                 rel="noopener noreferrer"
                 className="glass-panel flex items-center gap-3 rounded-2xl p-4 transition-colors duration-200 hover:border-accent"
               >
-                <Github className="size-5 shrink-0 text-accent" aria-hidden="true" />
+                <GithubIcon className="size-5 shrink-0 text-accent" />
                 <span className="text-sm text-foreground">github.com/{profile.handle}</span>
               </a>
             </li>
@@ -64,7 +65,7 @@ export function ContactSection({ headingId = 'contact-heading' }: { headingId?: 
                 rel="noopener noreferrer"
                 className="glass-panel flex items-center gap-3 rounded-2xl p-4 transition-colors duration-200 hover:border-accent"
               >
-                <Linkedin className="size-5 shrink-0 text-accent" aria-hidden="true" />
+                <LinkedinIcon className="size-5 shrink-0 text-accent" />
                 <span className="text-sm text-foreground">LinkedIn</span>
               </a>
             </li>

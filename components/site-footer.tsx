@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import { Github, Linkedin, Mail } from 'lucide-react'
+import { Mail } from 'lucide-react'
+import { GithubIcon, LinkedinIcon } from '@/components/brand-icons'
 import { profile } from '@/lib/content/profile'
 
 export function SiteFooter() {
@@ -40,7 +41,7 @@ export function SiteFooter() {
             aria-label="GitHub profile"
             className="rounded-md p-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
           >
-            <Github className="size-5" aria-hidden="true" />
+            <GithubIcon className="size-5" />
           </a>
           <a
             href={profile.links.linkedin}
@@ -49,7 +50,7 @@ export function SiteFooter() {
             aria-label="LinkedIn profile"
             className="rounded-md p-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
           >
-            <Linkedin className="size-5" aria-hidden="true" />
+            <LinkedinIcon className="size-5" />
           </a>
           <a
             href={`mailto:${profile.email}`}

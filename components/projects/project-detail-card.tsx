@@ -1,4 +1,5 @@
-import { ExternalLink, Github } from 'lucide-react'
+import { ExternalLink } from 'lucide-react'
+import { GithubIcon } from '@/components/brand-icons'
 import type { Project } from '@/lib/content/types'
 import { Reveal } from '@/components/reveal'
 
@@ -81,7 +82,7 @@ export function ProjectDetailCard({ project, index }: { project: Project; index:
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm text-foreground transition-colors duration-200 hover:bg-secondary"
                 >
-                  <Github className="size-4" aria-hidden="true" />
+                  <GithubIcon className="size-4" />
                   Repository
                 </a>
               )}
