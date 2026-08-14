@@ -1,71 +1,165 @@
-# Emmanuel Chinjekure — Personal Portfolio
+<div align="center">
 
-[![Next.js](https://img.shields.io/badge/Next.js-16.2.6-black?style=flat-square&logo=next.js)](https://nextjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.7-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4.2-38bdf8?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
-[![pnpm](https://img.shields.io/badge/pnpm-10.x-orange?style=flat-square&logo=pnpm)](https://pnpm.io/)
+# ⚡ Emmanuel Chinjekure — Personal Portfolio & Infrastructure Showcase
 
-> **Full-Stack Developer · Systems Administrator · Cybersecurity Enthusiast**  
-> IT Intern at Cimas Health Group · B.Tech Honours in Information Technology student at Harare Institute of Technology (HIT).
+[![Next.js 16](https://img.shields.io/badge/Next.js-16.2.6-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS v4](https://img.shields.io/badge/Tailwind_CSS-v4.2-38BDF8?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![pnpm](https://img.shields.io/badge/pnpm-v10.x-F69220?style=for-the-badge&logo=pnpm&logoColor=white)](https://pnpm.io/)
+[![Deploy Status](https://img.shields.io/badge/Vercel-Deployed-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://github.com/elic01/elic-portfolio)
 
-🔗 **GitHub Repository**: [github.com/elic01/elic-portfolio](https://github.com/elic01/elic-portfolio)  
-🔗 **LinkedIn**: [linkedin.com/in/emmanuel-l-i-chinjekure](https://www.linkedin.com/in/emmanuel-l-i-chinjekure)  
-✉️ **Contact**: [emmanuelisheanesu2004@gmail.com](mailto:emmanuelisheanesu2004@gmail.com)
+<p align="center">
+  <b>Full-Stack Developer · Systems Administrator · Cybersecurity Enthusiast</b><br/>
+  Completing Studies at Harare Institute of Technology (HIT) · Former IT Intern at Cimas Health Group<br/>
+  📍 Harare, Zimbabwe
+</p>
 
----
-
-## 🌟 Overview
-
-This repository contains the source code for **Emmanuel Chinjekure's (`elic01`)** personal portfolio and interactive technical showcase. 
-
-Designed with a sleek dark aesthetic, glassmorphism, and custom interactive widgets, the site is engineered on Next.js 16 with a strongly-typed content layer that decouples data from UI rendering.
-
-### ✨ Key Features
-
-- **🚀 Typed Content Engine**: All career data (projects, skills, work experience, education, site changelog) lives in structured, strongly-typed TypeScript modules (`lib/content/`).
-- **💻 Interactive Security Shell**: An in-browser CLI terminal (`/cybersecurity`) supporting interactive commands like `whoami`, `skills`, `certifications`, `contact`, and `sudo hire me`.
-- **⚙️ DevOps & Homelab Visualizers**: Interactive diagrams (`/devops`) showcasing self-hosted Proxmox VE infrastructure, Docker container stacks (Authentik SSO, Nextcloud, Gitea), and CI/CD pipelines.
-- **🎨 Modern Dark Aesthetic**: Built with custom HSL CSS tokens, glassmorphism (`glass-panel`), neumorphic card depth (`neu-card`), CRT scanline overlays, and smooth Framer Motion micro-animations.
-- **🛡️ Validated Contact Form**: Built with React Hook Form and Zod validation, complete with anti-spam honeypot protection.
-- **🔍 SEO & Accessibility**: Includes JSON-LD structured data (`Person` schema), semantic HTML5, and automatic reduced-motion accessibility fallbacks.
+[**🌐 Live Site**](https://github.com/elic01/elic-portfolio) · [**👔 LinkedIn**](https://www.linkedin.com/in/emmanuel-l-i-chinjekure) · [**💻 GitHub**](https://github.com/elic01) · [**✉️ Email**](mailto:emmanuelisheanesu2004@gmail.com)
 
 ---
 
-## 🛠️ Tech Stack
+```text
+  _____ _     ___ _____  _      ____   ___  ____ _____ _____ ___  _     ___ ___  
+ | ____| |   |_ _| ____|/ \    |  _ \ / _ \|  _ |_   _|  ___/ _ \| |   |_ _/ _ \ 
+ |  _| | |    | ||  _| / _ \   | |_) | | | | |_) || | | |_ | | | | |    | | | | |
+ | |___| |___ | || |__/ ___ \  |  __/| |_| |  _ < | | |  _|| |_| | |___ | | |_| |
+ |_____|_____|___|_____/_/   \_\_|    \___/|_| \_\|_| |_|   \___/|_____|___\___/ 
+```
 
-- **Framework**: [Next.js 16](https://nextjs.org/) (App Router + Turbopack)
-- **Language**: [TypeScript](https://www.typescriptlang.org/)
-- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/) & Framer Motion
-- **UI Components**: `@base-ui/react` primitives & Lucide React icons
-- **Form Handling**: `react-hook-form` + `@hookform/resolvers` + `zod`
-- **Analytics**: `@vercel/analytics`
-- **Linting & Quality**: ESLint 9 (Flat Config) + TypeScript Compiler
+</div>
 
 ---
 
-## 📁 Repository Structure
+## 📖 Overview
+
+**`elic-portfolio`** is a Next.js 16 web platform engineering showcase built for **Emmanuel Chinjekure (`@elic01`)**.
+
+Rather than a static landing page, this application functions as a living laboratory and career architecture platform. Built on top of a strongly-typed content layer, it combines interactive cybersecurity tools, DevOps infrastructure visualizers, and responsive software design into a fast, accessible experience.
+
+---
+
+## 🔥 Key Highlights & Features
+
+| Feature | Description | Tech Stack |
+| :--- | :--- | :--- |
+| **🚀 Typed Content Engine** | All data (projects, skills, career timeline, `/now` updates, changelog) is decoupled into typed TypeScript models in [`lib/content/`](file:///home/elic/Documents/Github/elic-portfolio/lib/content/types.ts). Updates require no JSX rewrites. | `TypeScript` `Zod` |
+| **💻 Interactive Security Shell** | A client-side CLI terminal emulator (`/cybersecurity`) supporting real-time shell commands (`whoami`, `skills`, `tools`, `vuln-toolkit`, `sudo hire me`). | `React` `Framer Motion` |
+| **⚙️ DevOps & Stack Diagrams** | Interactive visual diagrams (`/devops`) detailing self-hosted Proxmox VE hypervisors, Docker container stacks (Authentik SSO, Nextcloud, Gitea), and CI/CD pipelines. | `Framer Motion` `CSS Tokens` |
+| **🎨 Premium Dark Aesthetic** | Engineered with custom HSL CSS variables, glassmorphism (`glass-panel`), neumorphic card depth (`neu-card`), and CRT scanline overlays. | `Tailwind CSS v4` `CSS Variables` |
+| **🛡️ Validated Contact Form** | Client-side validated form with React Hook Form + Zod schema validation and anti-spam honeypot security. | `React Hook Form` `Zod` |
+| **♿ Accessibility & SEO** | Semantic HTML5 tags, JSON-LD structured data (`Person` schema), and automatic `useReducedMotion` fallback hooks. | `Next.js SEO` `JSON-LD` |
+
+---
+
+## 🛠️ Technology Matrix
+
+```text
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                             ENGINEERING STACK                               │
+├───────────────────┬───────────────────┬───────────────────┬─────────────────┤
+│ Frontend Core     │ Styling & Motion  │ Security & DevOps │ Quality & Tools │
+├───────────────────┼───────────────────┼───────────────────┼─────────────────┤
+│ Next.js 16        │ Tailwind CSS v4   │ Proxmox VE        │ TypeScript 5.7  │
+│ React 19          │ Framer Motion 12  │ Docker Compose    │ pnpm 10         │
+│ App Router        │ Base UI           │ Authentik SSO     │ ESLint 9        │
+│ Turbopack         │ Lucide Icons      │ Ansible / Python  │ Turbopack       │
+└───────────────────┴───────────────────┴───────────────────┴─────────────────┘
+```
+
+---
+
+## 📦 Featured GitHub Projects
+
+The portfolio dynamically renders projects directly sourced from **[`github.com/elic01`](https://github.com/elic01)**:
+
+```mermaid
+graph TD
+    A[Portfolio Content Engine] --> B[DevOps & IaC]
+    A --> C[Cybersecurity]
+    A --> D[Full-Stack Applications]
+    
+    B --> B1[cisco-meraki-ansible]
+    B --> B2[Homelab Infrastructure]
+    
+    C --> C1[vulnerability-assessment-toolkit]
+    
+    D --> D1[uniconnect]
+    D --> D2[healthcare-portal]
+    D --> D3[fleettrack]
+    D --> D4[ladyonyxweb]
+```
+
+### 🔒 Cybersecurity & DevOps
+1. **[`vulnerability-assessment-toolkit`](https://github.com/elic01/vulnerability-assessment-toolkit)**  
+   *Automated security auditing shell toolkit for rapid port scanning, service reconnaissance, and attack surface assessment.*
+2. **[`cisco-meraki-ansible`](https://github.com/elic01/cisco-meraki-ansible)**  
+   *Infrastructure-as-Code (IaC) playbooks for automated provisioning and security policy management across Cisco Meraki enterprise networks.*
+3. **[Homelab Infrastructure & Self-Hosting](https://github.com/elic01)**  
+   *Proxmox VE virtualization cluster hosting Nextcloud, Paperless-ngx, and Gitea via Docker Compose, backed by PostgreSQL, Redis, and Authentik SSO.*
+
+### 💻 Full-Stack Development
+4. **[`uniconnect`](https://github.com/elic01/uniconnect)**  
+   *Full-stack student feedback platform built with Next.js, Firebase Auth, and Firestore real-time database.*
+5. **[`healthcare-portal`](https://github.com/elic01/healthcare-portal)**  
+   *Comprehensive web portal for managing clinical workflows and patient records in health IT environments.*
+6. **[`fleettrack`](https://github.com/elic01/fleettrack)**  
+   *Full-stack vehicle telematics, route tracking, and maintenance management application.*
+
+---
+
+## 💻 Interactive Shell Reference (`/cybersecurity`)
+
+Users can interact with the embedded security CLI using the following terminal commands:
+
+```bash
+elic@security:~$ help
+
+Available commands:
+  whoami          — who is this guy?
+  skills          — list technical skills across stack
+  tools           — list security & automation projects
+  vuln-toolkit    — view Vulnerability Assessment Toolkit details
+  certifications  — list current pursuits & credentials
+  contact         — how to reach Emmanuel
+  clear           — clear terminal screen
+  sudo hire me    — trigger secure recruiter communication channel
+```
+
+---
+
+## 📁 Directory Architecture
 
 ```text
 elic-portfolio/
-├── app/                  # Next.js App Router routes
-│   ├── page.tsx          # Home page (Hero, About, Featured Projects, Skills, Timeline)
-│   ├── projects/         # Project showcase & deep-dives
-│   ├── cybersecurity/    # Interactive CLI terminal & BIOS boot animation
-│   ├── devops/           # CI/CD pipeline & homelab architecture diagrams
-│   ├── now/              # Current focus & learning updates
-│   ├── contact/          # Contact form with Zod validation
-│   └── changelog/        # Site revision history
-├── components/           # UI & Feature components
-│   ├── cybersecurity/    # Interactive CLI shell & boot sequence
-│   ├── devops/           # Pipeline & Stack visualizers
-│   ├── home/             # Hero, about, skills preview, timeline
-│   ├── projects/         # Detailed project cards
-│   └── ui/               # Base UI primitives (buttons, etc.)
-├── lib/
-│   ├── content/          # Data models & content sources (projects, skills, profile)
-│   └── utils.ts          # Utility functions (clsx, tailwind-merge)
-├── eslint.config.mjs     # ESLint Flat Config setup
-└── package.json          # Dependency definitions & scripts
+├── app/                        # Next.js App Router pages
+│   ├── page.tsx                # Hero, About, Featured Work, Skills & Timeline
+│   ├── projects/               # Project portfolio & deep dives
+│   ├── cybersecurity/          # Security focus areas, Vulnerability Toolkit & Shell
+│   ├── devops/                 # Homelab visualizer, stack & pipeline diagrams
+│   ├── now/                    # August 2026 status & learning log
+│   ├── contact/                # Validated contact form
+│   ├── changelog/              # Career & application revision history
+│   ├── globals.css             # Theme tokens, utilities & scanline overlays
+│   └── layout.tsx              # Root layout, fonts & JSON-LD schema
+├── components/                 # React UI components
+│   ├── cybersecurity/          # Interactive CLI shell & BIOS boot animation
+│   ├── devops/                 # CI/CD pipeline & stack visualizer components
+│   ├── home/                   # Hero, about, skills preview & timeline sections
+│   ├── projects/               # Detailed project cards & tech badges
+│   └── ui/                     # Base UI primitive components (Button, etc.)
+├── lib/                        # Core application utilities
+│   ├── content/                # Strongly-typed content data layer
+│   │   ├── profile.ts          # Profile details, bio & role status
+│   │   ├── projects.ts         # Portfolio projects list (GitHub repos)
+│   │   ├── skills.ts           # Technical skill categories & proficiency
+│   │   ├── experience.ts       # Work experience & internship history
+│   │   ├── education.ts        # Degree & organization affiliations
+│   │   ├── site.ts             # /now log & site changelog entries
+│   │   └── types.ts            # TypeScript interfaces
+│   └── utils.ts                # Tailwind class merger utility
+├── eslint.config.mjs           # ESLint 9 Flat Config setup
+├── package.json                # Project dependencies & scripts
+└── README.md                   # Project documentation
 ```
 
 ---
@@ -74,13 +168,13 @@ elic-portfolio/
 
 ### Prerequisites
 
-Make sure you have Node.js (v20+) and `pnpm` installed:
+Ensure you have **Node.js (v20+)** and **`pnpm`** installed:
 
 ```bash
 corepack enable
 ```
 
-### Installation
+### Installation & Setup
 
 1. **Clone the repository**:
    ```bash
@@ -93,39 +187,37 @@ corepack enable
    pnpm install
    ```
 
-3. **Start the development server**:
+3. **Run local development server**:
    ```bash
    pnpm dev
    ```
-   Open [http://localhost:3000](http://localhost:3000) in your browser.
+   Open **`http://localhost:3000`** in your browser.
 
 ---
 
-## 🧪 Verification & Build Scripts
+## 🧪 Verification & Build Commands
 
-- **Run Linter**:
-  ```bash
-  pnpm run lint
-  ```
-- **TypeScript Type Check**:
-  ```bash
-  npx tsc --noEmit
-  ```
-- **Production Build**:
-  ```bash
-  pnpm run build
-  ```
-- **Start Production Server**:
-  ```bash
-  pnpm start
-  ```
+Maintain code quality and verify builds using the following commands:
+
+| Command | Action |
+| :--- | :--- |
+| **`pnpm dev`** | Starts Next.js development server with Turbopack |
+| **`pnpm run lint`** | Runs ESLint 9 flat-config check across all `.ts`/`.tsx` files |
+| **`npx tsc --noEmit`** | Performs strict TypeScript compiler type verification |
+| **`pnpm run build`** | Compiles production static page assets |
+| **`pnpm start`** | Runs the production server build locally |
 
 ---
 
 ## 📬 Contact & Connect
 
-- **Portfolio Site**: [https://github.com/elic01/elic-portfolio](https://github.com/elic01/elic-portfolio)
-- **GitHub**: [@elic01](https://github.com/elic01)
-- **LinkedIn**: [Emmanuel Chinjekure](https://www.linkedin.com/in/emmanuel-l-i-chinjekure)
-- **Email**: [emmanuelisheanesu2004@gmail.com](mailto:emmanuelisheanesu2004@gmail.com)
-- **Location**: Harare, Zimbabwe
+<div align="center">
+
+**Emmanuel Leon Isheanesu Chinjekure**  
+*Harare, Zimbabwe*
+
+[![GitHub](https://img.shields.io/badge/GitHub-elic01-181717?style=for-the-badge&logo=github)](https://github.com/elic01)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Emmanuel_Chinjekure-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/emmanuel-l-i-chinjekure)
+[![Email](https://img.shields.io/badge/Email-emmanuelisheanesu2004@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:emmanuelisheanesu2004@gmail.com)
+
+</div>
