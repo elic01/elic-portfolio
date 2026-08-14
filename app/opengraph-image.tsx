@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
 
-export const alt = 'Emmanuel Chinjekure — Full-Stack Developer & Systems Administrator'
+export const alt = 'Emmanuel Leon Isheanesu Chinjekure — Full-Stack Developer & Systems Administrator'
 export const size = {
   width: 1200,
   height: 630,
@@ -44,14 +44,14 @@ export default function Image() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
           <h1
             style={{
-              fontSize: '56px',
+              fontSize: '48px',
               fontWeight: 800,
               lineHeight: 1.1,
               margin: 0,
               color: '#ffffff',
             }}
           >
-            Emmanuel Chinjekure
+            Emmanuel Leon Isheanesu Chinjekure
           </h1>
           <p
             style={{

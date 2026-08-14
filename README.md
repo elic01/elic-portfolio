@@ -1,6 +1,6 @@
 <div align="center">
 
-# ⚡ Emmanuel Chinjekure — Personal Portfolio & Infrastructure Showcase
+# ⚡ Emmanuel Leon Isheanesu Chinjekure — Personal Portfolio & Infrastructure Showcase
 
 [![Next.js 16](https://img.shields.io/badge/Next.js-16.2.6-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
@@ -32,7 +32,7 @@
 
 ## 📖 Overview
 
-**`elic-portfolio`** is a Next.js 16 web platform engineering showcase built for **Emmanuel Chinjekure (`@elic01`)**.
+**`elic-portfolio`** is a Next.js 16 web platform engineering showcase built for **Emmanuel Leon Isheanesu Chinjekure (`@elic01`)**.
 
 Rather than a static landing page, this application functions as a living laboratory and career architecture platform. Built on top of a strongly-typed content layer, it combines interactive cybersecurity tools, DevOps infrastructure visualizers, and responsive software design into a fast, accessible experience.
 

@@ -19,8 +19,8 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(profile.siteUrl || 'https://elic.dev'),
   title: {
-    default: 'Emmanuel Chinjekure — Full-Stack Developer & Systems Administrator',
-    template: '%s — Emmanuel Chinjekure',
+    default: 'Emmanuel Leon Isheanesu Chinjekure — Full-Stack Developer & Systems Administrator',
+    template: '%s — Emmanuel Leon Isheanesu Chinjekure',
   },
   description:
     'Full-stack developer, systems administrator, and cybersecurity enthusiast based in Harare, Zimbabwe. Completing B.Tech IT studies at Harare Institute of Technology (former IT Intern at Cimas Health Group).',

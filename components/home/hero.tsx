@@ -31,7 +31,7 @@ export function Hero() {
               className="max-w-3xl text-balance text-4xl font-bold leading-[1.08] tracking-tight md:text-6xl lg:text-7xl"
             >
               <span className="bg-gradient-to-r from-foreground via-foreground to-accent bg-clip-text text-transparent">
-                {profile.shortName}
+                {profile.fullName}
               </span>
             </h1>
 
