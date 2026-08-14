@@ -1,13 +1,13 @@
 import type { ChangelogEntry, NowItem } from './types'
 
-/** The /now page — update freely, it should always reflect this month. */
-export const nowUpdated = 'July 2026'
+/** The /now page — updated for August 2026. */
+export const nowUpdated = 'August 2026'
 
 export const nowItems: NowItem[] = [
   {
-    label: 'Working',
+    label: 'Status',
     detail:
-      'Wrapping up my IT internship at Cimas Health Group — enterprise infrastructure support in a high-compliance health environment.',
+      'Completed IT internship at Cimas Health Group; currently completing final studies towards B.Tech Honours in Information Technology at Harare Institute of Technology.',
   },
   {
     label: 'Building',
@@ -17,17 +17,21 @@ export const nowItems: NowItem[] = [
   {
     label: 'Learning',
     detail:
-      'Going deeper on networking fundamentals and identity management, plus IT governance through HIT ISACA.',
+      'Going deeper on networking fundamentals, infrastructure automation with Ansible, and identity management.',
   },
   {
     label: 'Studying',
     detail:
-      'Third year of B.Tech Honours in Information Technology at Harare Institute of Technology (graduating August 2027).',
+      'Completing final B.Tech Honours in Information Technology degree requirements at Harare Institute of Technology.',
   },
 ]
 
 /** Running log of career + site milestones. Newest first. */
 export const changelog: ChangelogEntry[] = [
+  {
+    date: '2026-08',
+    entry: 'Completed IT Internship at Cimas Health Group & transitioned to final degree completion phase at HIT.',
+  },
   {
     date: '2026-07',
     entry: 'Rebuilt this site as a long-term career platform on a typed content layer.',

@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: '%s — Emmanuel Chinjekure',
   },
   description:
-    'Full-stack developer, systems administrator, and cybersecurity enthusiast based in Harare, Zimbabwe. IT Intern at Cimas Health Group and B.Tech IT student at Harare Institute of Technology.',
+    'Full-stack developer, systems administrator, and cybersecurity enthusiast based in Harare, Zimbabwe. Completing B.Tech IT studies at Harare Institute of Technology (former IT Intern at Cimas Health Group).',
   generator: 'v0.app',
   openGraph: {
     title: 'Emmanuel Chinjekure — Full-Stack Developer & Systems Administrator',
