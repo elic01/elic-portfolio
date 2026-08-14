@@ -9,6 +9,7 @@ export const profile = {
   phone: '+263 78 854 7017',
   siteUrl: 'https://elic.dev',
   cvPath: '/cv/Emmanuel-Chinjekure-CV.pdf',
+  avatarPath: '/IMG_0702.PNG',
   links: {
     github: 'https://github.com/elic01',
     linkedin: 'https://www.linkedin.com/in/emmanuel-l-i-chinjekure',
