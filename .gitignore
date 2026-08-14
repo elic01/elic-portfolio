@@ -13,9 +13,10 @@ tsconfig.tsbuildinfo
 node_modules/
 .pnpm-store/
 
-# Environment variables
+# Environment variables & MCP secret configs
 .env
 .env*.local
+.agents/mcp_config.json
 
 # Logs
 logs
