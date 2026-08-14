@@ -7,7 +7,7 @@ export const profile = {
   location: 'Harare, Zimbabwe',
   email: 'emmanuelisheanesu2004@gmail.com',
   phone: '+263 78 854 7017',
-  siteUrl: 'https://elic.dev',
+  siteUrl: 'https://elic01.dev',
   cvPath: '/cv/Emmanuel-Chinjekure-CV.pdf',
   avatarPath: '/IMG_0702.PNG',
   links: {

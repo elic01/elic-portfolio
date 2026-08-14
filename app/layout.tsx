@@ -17,31 +17,82 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL(profile.siteUrl || 'https://elic.dev'),
+  metadataBase: new URL(profile.siteUrl),
   title: {
-    default: 'Emmanuel Leon Isheanesu Chinjekure — Full-Stack Developer & Systems Administrator',
+    default: 'Emmanuel Leon Isheanesu Chinjekure (elic01) — Portfolio',
     template: '%s — Emmanuel Leon Isheanesu Chinjekure',
   },
   description:
-    'Full-stack developer, systems administrator, and cybersecurity enthusiast based in Harare, Zimbabwe. Completing B.Tech IT studies at Harare Institute of Technology (former IT Intern at Cimas Health Group).',
-  generator: 'v0.app',
+    'Emmanuel Leon Isheanesu Chinjekure (elic / elic01) — Full-Stack Developer, Systems Administrator & Cybersecurity Enthusiast based in Harare, Zimbabwe. Completing B.Tech IT at Harare Institute of Technology (former IT Intern at Cimas Health Group).',
+  keywords: [
+    'elic',
+    'elic01',
+    'Emmanuel Chinjekure',
+    'Emmanuel Leon Isheanesu Chinjekure',
+    'Emmanuel Chinjekure Zimbabwe',
+    'Emmanuel Chinjekure HIT',
+    'Harare Institute of Technology',
+    'Cimas Health Group',
+    'Cybersecurity Zimbabwe',
+    'DevOps Zimbabwe',
+    'Full-Stack Developer Harare',
+    'System Administrator Zimbabwe',
+    'Vulnerability Assessment Toolkit',
+  ],
+  authors: [{ name: profile.fullName, url: profile.siteUrl }],
+  creator: profile.fullName,
+  publisher: profile.fullName,
+  alternates: {
+    canonical: profile.siteUrl,
+  },
   openGraph: {
-    title: 'Emmanuel Chinjekure — Full-Stack Developer & Systems Administrator',
+    title: 'Emmanuel Leon Isheanesu Chinjekure (elic01) — Full-Stack Developer & SysAdmin',
     description:
-      'Full-stack development, homelab infrastructure, and cybersecurity. Based in Harare, Zimbabwe.',
+      'Official portfolio of Emmanuel Leon Isheanesu Chinjekure (elic / elic01) — Full-Stack Development, Homelab Infrastructure, and Cybersecurity. Based in Harare, Zimbabwe.',
+    url: profile.siteUrl,
+    siteName: 'elic01.dev',
+    locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: '/opengraph-image',
+        width: 1200,
+        height: 630,
+        alt: 'Emmanuel Leon Isheanesu Chinjekure (elic01)',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Emmanuel Leon Isheanesu Chinjekure (elic01)',
+    description:
+      'Full-Stack Developer, Systems Administrator & Cybersecurity Enthusiast in Harare, Zimbabwe.',
+    creator: '@elic01',
+    images: ['/opengraph-image'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 }
 
 export const viewport: Viewport = {
   colorScheme: 'dark',
-  themeColor: '#0d1117',
+  themeColor: '#090d12',
 }
 
 const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: profile.fullName,
+  alternateName: ['elic', 'elic01', 'Emmanuel Chinjekure', 'Emmanuel L. I. Chinjekure'],
   jobTitle: profile.title,
   email: `mailto:${profile.email}`,
   telephone: profile.phone,
@@ -52,7 +103,38 @@ const personSchema = {
   },
   url: profile.siteUrl,
   sameAs: [profile.links.github, profile.links.linkedin],
-  alumniOf: 'Harare Institute of Technology',
+  alumniOf: {
+    '@type': 'EducationalOrganization',
+    name: 'Harare Institute of Technology',
+  },
+  worksFor: {
+    '@type': 'Organization',
+    name: 'Cimas Health Group',
+  },
+  knowsAbout: [
+    'Software Engineering',
+    'Cybersecurity',
+    'Vulnerability Assessment',
+    'Systems Administration',
+    'DevOps',
+    'Next.js',
+    'TypeScript',
+    'Proxmox VE',
+    'Docker',
+    'Authentik SSO',
+  ],
+}
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'elic01.dev',
+  alternateName: 'Emmanuel Chinjekure Portfolio',
+  url: profile.siteUrl,
+  author: {
+    '@type': 'Person',
+    name: profile.fullName,
+  },
 }
 
 export default function RootLayout({
@@ -69,6 +151,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
         <SiteNav />
         {children}
