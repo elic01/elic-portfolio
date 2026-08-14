@@ -3,6 +3,7 @@
 import { useRef, useState } from 'react'
 import { profile } from '@/lib/content/profile'
 import { skillGroups } from '@/lib/content/skills'
+import { projects } from '@/lib/content/projects'
 
 interface TerminalLine {
   type: 'input' | 'output'
@@ -13,6 +14,8 @@ const helpText = [
   'Available commands:',
   '  whoami          — who is this guy?',
   '  skills          — list technical skills',
+  '  tools           — list security & automation tools',
+  '  vuln-toolkit    — view Vulnerability Assessment Toolkit info',
   '  certifications  — list certifications',
   '  contact         — how to reach me',
   '  clear           — clear the terminal',
@@ -33,6 +36,25 @@ function runCommand(cmd: string): string[] {
       return skillGroups.map(
         (g) => `${g.category}: ${g.skills.map((s) => s.name).join(', ')}`,
       )
+    case 'tools':
+    case 'projects': {
+      const secTools = projects.filter((p) => p.category === 'security' || p.category === 'devops')
+      return [
+        'Security & Infrastructure Tooling:',
+        ...secTools.map((t) => `  - ${t.slug}: ${t.title} [${t.techStack.join(', ')}]`),
+        "Type 'vuln-toolkit' for direct toolkit details.",
+      ]
+    }
+    case 'vuln-toolkit': {
+      const toolkit = projects.find((p) => p.slug === 'vulnerability-assessment-toolkit')
+      if (!toolkit) return ['Toolkit project details not found.']
+      return [
+        `[${toolkit.title}]`,
+        `Summary: ${toolkit.summary}`,
+        `Tech: ${toolkit.techStack.join(', ')}`,
+        `Repo: ${toolkit.links.repo || 'N/A'}`,
+      ]
+    }
     case 'certifications':
       return [
         'No formal certifications yet — currently pursuing:',
@@ -59,7 +81,7 @@ function runCommand(cmd: string): string[] {
 
 export function InteractiveTerminal() {
   const [lines, setLines] = useState<TerminalLine[]>([
-    { type: 'output', text: "Type 'help' to see available commands. Try 'sudo hire me'." },
+    { type: 'output', text: "Type 'help' to see available commands. Try 'tools' or 'sudo hire me'." },
   ])
   const [input, setInput] = useState('')
   const scrollRef = useRef<HTMLDivElement>(null)
@@ -130,7 +152,7 @@ export function InteractiveTerminal() {
             }
           }}
           className="w-full bg-transparent text-foreground caret-terminal outline-none placeholder:text-muted-foreground/50"
-          placeholder="try: whoami"
+          placeholder="try: tools"
         />
       </div>
     </div>

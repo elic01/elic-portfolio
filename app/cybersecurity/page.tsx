@@ -2,12 +2,14 @@ import type { Metadata } from 'next'
 import { Fingerprint, Network, ShieldCheck, Terminal } from 'lucide-react'
 import { BootSequence } from '@/components/cybersecurity/boot-sequence'
 import { InteractiveTerminal } from '@/components/cybersecurity/interactive-terminal'
+import { ProjectDetailCard } from '@/components/projects/project-detail-card'
 import { Reveal } from '@/components/reveal'
+import { projects } from '@/lib/content/projects'
 
 export const metadata: Metadata = {
   title: 'Cybersecurity',
   description:
-    'Cybersecurity focus areas of Emmanuel Chinjekure — networking fundamentals, Linux, identity management with Authentik, and IT governance through HIT ISACA.',
+    'Cybersecurity focus areas & tooling by Emmanuel Chinjekure — vulnerability assessment, networking fundamentals, Linux hardening, identity management with Authentik, and HIT ISACA.',
 }
 
 const focusAreas = [
@@ -32,6 +34,8 @@ const focusAreas = [
     body: 'Building foundations in information systems auditing and security protocols through HIT ISACA, plus exposure to high-compliance IT operations in healthcare.',
   },
 ]
+
+const securityProjects = projects.filter((p) => p.category === 'security')
 
 export default function CybersecurityPage() {
   return (
@@ -76,6 +80,24 @@ export default function CybersecurityPage() {
             ))}
           </div>
         </section>
+
+        {securityProjects.length > 0 && (
+          <section aria-labelledby="sec-projects-heading" className="mb-16">
+            <Reveal>
+              <h2 id="sec-projects-heading" className="mb-2 font-mono text-2xl font-bold text-foreground">
+                <span className="text-terminal">##</span> Security Tools &amp; Projects
+              </h2>
+              <p className="mb-6 font-mono text-sm text-muted-foreground">
+                Security tooling, automated vulnerability scanning, and penetration auditing software.
+              </p>
+            </Reveal>
+            <div className="flex flex-col gap-8">
+              {securityProjects.map((project, i) => (
+                <ProjectDetailCard key={project.slug} project={project} index={i} />
+              ))}
+            </div>
+          </section>
+        )}
 
         <section aria-labelledby="terminal-heading" className="mb-16">
           <Reveal>
