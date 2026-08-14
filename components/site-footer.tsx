@@ -6,7 +6,7 @@ import { profile } from '@/lib/content/profile'
 export function SiteFooter() {
   return (
     <footer className="relative pt-12 pb-16">
-      <div className="mx-auto max-w-5xl px-4 md:px-6">
+      <div className="mx-auto max-w-6xl px-4 md:px-6">
         <div className="neu-card rounded-3xl border border-white/10 bg-card/40 backdrop-blur-xl p-8 shadow-2xl">
           <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
             {/* Left: Handle & Brand details */}

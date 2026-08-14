@@ -16,7 +16,7 @@ const infraProjects = projects.filter((p) => p.category === 'devops')
 
 export default function DevOpsPage() {
   return (
-    <main className="mx-auto max-w-5xl px-4 py-16 md:px-6 md:py-20">
+    <main className="mx-auto max-w-6xl px-4 py-16 md:px-6 md:py-24 pt-24">
       <Reveal>
         <p className="mb-3 font-mono text-sm text-ember">
           <span className="text-muted-foreground">$</span> systemctl status homelab.elic

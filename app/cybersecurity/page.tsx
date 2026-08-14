@@ -40,7 +40,7 @@ const securityProjects = projects.filter((p) => p.category === 'security')
 export default function CybersecurityPage() {
   return (
     <main className="scanlines bg-black">
-      <div className="mx-auto max-w-5xl px-4 py-16 md:px-6 md:py-20">
+      <div className="mx-auto max-w-6xl px-4 py-16 md:px-6 md:py-24 pt-24">
         <Reveal>
           <p className="mb-3 font-mono text-sm text-terminal">
             <span className="text-muted-foreground">$</span> cat /etc/motd

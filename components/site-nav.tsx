@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Download, Menu, X } from 'lucide-react'
@@ -19,10 +19,34 @@ const navItems = [
 export function SiteNav() {
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20)
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll()
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
-    <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-5xl">
-      <div className="rounded-full border border-white/10 bg-card/75 backdrop-blur-2xl shadow-2xl px-5 py-2.5 transition-all duration-300">
+    <header
+      className={cn(
+        'fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ease-out',
+        scrolled
+          ? 'top-3 w-[92%] max-w-5xl'
+          : 'top-0 w-full max-w-6xl px-4 md:px-6 pt-3',
+      )}
+    >
+      <div
+        className={cn(
+          'transition-all duration-300 ease-out',
+          scrolled
+            ? 'rounded-full border border-white/10 bg-card/85 backdrop-blur-2xl shadow-2xl px-5 py-2.5'
+            : 'rounded-2xl border border-white/5 bg-background/60 backdrop-blur-xl px-5 py-3 shadow-lg',
+        )}
+      >
         <nav
           aria-label="Main navigation"
           className="flex items-center justify-between"
@@ -88,7 +112,7 @@ export function SiteNav() {
 
       {/* Mobile Popover Menu */}
       {open && (
-        <div className="absolute top-14 left-0 right-0 rounded-3xl border border-white/10 bg-card/95 backdrop-blur-2xl p-4 shadow-2xl md:hidden">
+        <div className="absolute top-16 left-0 right-0 rounded-3xl border border-white/10 bg-card/95 backdrop-blur-2xl p-4 shadow-2xl md:hidden">
           <div className="flex flex-col gap-1.5">
             {navItems.map((item) => {
               const isActive = pathname === item.href
