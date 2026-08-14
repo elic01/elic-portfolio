@@ -13,20 +13,28 @@ const accentText: Record<string, string> = {
 
 export function SkillsPreview() {
   return (
-    <section aria-labelledby="skills-heading" className="mx-auto max-w-6xl px-4 py-20 md:px-6">
+    <section aria-labelledby="skills-heading" className="relative mx-auto max-w-6xl px-4 py-16 md:px-6 md:py-24">
+      {/* Background radial glow */}
+      <div
+        className="absolute top-1/2 right-0 -translate-y-1/2 size-96 rounded-full bg-violet/5 blur-3xl -z-10"
+        aria-hidden="true"
+      />
+
       <Reveal>
-        <p className="mb-2 text-sm font-medium uppercase tracking-wide text-violet">Capabilities</p>
-        <h2 id="skills-heading" className="mb-8 text-3xl font-bold tracking-tight md:text-4xl">
-          Skills
-        </h2>
+        <div className="mb-8 flex flex-col gap-2">
+          <p className="font-mono text-xs uppercase tracking-widest text-violet">Capabilities</p>
+          <h2 id="skills-heading" className="text-3xl font-bold tracking-tight md:text-4xl">
+            Skills &amp; Expertise
+          </h2>
+        </div>
       </Reveal>
 
       <Reveal>
-        <ul className="mb-10 flex flex-wrap gap-3" aria-label="Top skills">
+        <ul className="mb-10 flex flex-wrap gap-2.5" aria-label="Top skills">
           {topSkills.map((skill) => (
             <li
               key={skill}
-              className="rounded-full border border-violet/40 bg-violet/10 px-4 py-1.5 text-sm text-foreground transition-colors duration-200 hover:border-violet"
+              className="rounded-full border border-violet/30 bg-violet/10 backdrop-blur-md px-4 py-1.5 font-mono text-xs text-foreground transition-all duration-300 hover:border-violet hover:bg-violet/20"
             >
               {skill}
             </li>
@@ -37,8 +45,8 @@ export function SkillsPreview() {
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {skillGroups.map((group, i) => (
           <Reveal key={group.category} delay={i * 0.06}>
-            <div className="neu-card h-full rounded-2xl p-6">
-              <h3 className={cn('mb-4 text-sm font-semibold uppercase tracking-wide', accentText[group.accent])}>
+            <div className="neu-card neu-card-hover h-full rounded-2xl p-6 backdrop-blur-xl">
+              <h3 className={cn('mb-4 font-mono text-xs font-semibold uppercase tracking-wider', accentText[group.accent])}>
                 {group.category}
               </h3>
               <ul className="flex flex-col gap-3">
@@ -54,8 +62,8 @@ export function SkillsPreview() {
                           key={level}
                           aria-hidden="true"
                           className={cn(
-                            'size-1.5 rounded-full',
-                            level <= skill.proficiency ? 'bg-accent' : 'bg-border',
+                            'size-1.5 rounded-full transition-colors duration-300',
+                            level <= skill.proficiency ? 'bg-accent shadow-[0_0_8px_rgba(0,201,167,0.6)]' : 'bg-border/60',
                           )}
                         />
                       ))}

@@ -21,10 +21,16 @@ export function Reveal({
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, y: 24 }}
+      initial={{ opacity: 0, y: 28 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-60px' }}
-      transition={{ type: 'spring', stiffness: 120, damping: 20, delay }}
+      viewport={{ once: true, margin: '-40px' }}
+      transition={{
+        type: 'spring',
+        stiffness: 90,
+        damping: 22,
+        mass: 0.9,
+        delay,
+      }}
     >
       {children}
     </motion.div>

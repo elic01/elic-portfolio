@@ -42,22 +42,22 @@
 :root,
 .dark {
   color-scheme: dark;
-  --background: #0d1117;
+  --background: #090d12;
   --foreground: #e6edf3;
-  --card: #161b22;
+  --card: rgba(22, 27, 34, 0.65);
   --card-foreground: #e6edf3;
   --popover: #1c2128;
   --popover-foreground: #e6edf3;
   --primary: #1e3a5f;
   --primary-foreground: #e6edf3;
-  --secondary: #1c2128;
+  --secondary: rgba(28, 33, 40, 0.7);
   --secondary-foreground: #e6edf3;
   --muted: #1c2128;
   --muted-foreground: #8b949e;
   --accent: #00c9a7;
   --accent-foreground: #0d1117;
   --destructive: #da3633;
-  --border: #30363d;
+  --border: rgba(255, 255, 255, 0.08);
   --input: #1c2128;
   --ring: #00c9a7;
   --gold: #ffb703;
@@ -77,7 +77,11 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground font-sans relative overflow-x-hidden;
+    background-image: 
+      radial-gradient(circle at 50% 0%, rgba(0, 201, 167, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 10% 30%, rgba(157, 92, 230, 0.06) 0%, transparent 45%),
+      radial-gradient(circle at 90% 70%, rgba(255, 183, 3, 0.05) 0%, transparent 45%);
   }
   h1,
   h2,
@@ -89,18 +93,33 @@
   }
 }
 
+/* Background Subtle Grid Texture */
+@utility bg-grid-pattern {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, #000 60%, transparent 100%);
+}
+
 @utility neu-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  box-shadow:
-    6px 6px 12px #0a0d11,
-    -6px -6px 12px #1e2530;
+  backdrop-filter: blur(16px);
+  background: rgba(22, 27, 34, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@utility neu-card-hover {
+  &:hover {
+    border-color: rgba(0, 201, 167, 0.3);
+    box-shadow: 0 25px 50px -12px rgba(0, 201, 167, 0.12);
+  }
 }
 
 @utility glass-panel {
-  backdrop-filter: blur(12px);
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 /* Subtle CRT scanline overlay for the cybersecurity page */
