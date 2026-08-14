@@ -17,6 +17,7 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(profile.siteUrl || 'https://elic.dev'),
   title: {
     default: 'Emmanuel Chinjekure — Full-Stack Developer & Systems Administrator',
     template: '%s — Emmanuel Chinjekure',

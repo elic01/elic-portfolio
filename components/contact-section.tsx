@@ -2,6 +2,7 @@ import { Mail, MapPin, Phone } from 'lucide-react'
 import { GithubIcon, LinkedinIcon } from '@/components/brand-icons'
 import { profile } from '@/lib/content/profile'
 import { ContactForm } from '@/components/contact-form'
+import { CopyButton } from '@/components/ui/copy-button'
 import { Reveal } from '@/components/reveal'
 
 export function ContactSection({ headingId = 'contact-heading' }: { headingId?: string }) {
@@ -29,23 +30,25 @@ export function ContactSection({ headingId = 'contact-heading' }: { headingId?: 
 
         <Reveal delay={0.1} className="lg:w-80">
           <ul className="flex flex-col gap-3">
-            <li>
+            <li className="glass-panel flex items-center justify-between gap-3 rounded-2xl p-4">
               <a
                 href={`mailto:${profile.email}`}
-                className="glass-panel flex items-center gap-3 rounded-2xl p-4 transition-colors duration-200 hover:border-accent"
+                className="flex items-center gap-3 overflow-hidden transition-colors duration-200 hover:text-accent"
               >
                 <Mail className="size-5 shrink-0 text-accent" aria-hidden="true" />
-                <span className="break-all text-sm text-foreground">{profile.email}</span>
+                <span className="truncate text-sm text-foreground">{profile.email}</span>
               </a>
+              <CopyButton text={profile.email} label="Copy" />
             </li>
-            <li>
+            <li className="glass-panel flex items-center justify-between gap-3 rounded-2xl p-4">
               <a
                 href={`tel:${profile.phone.replace(/\s/g, '')}`}
-                className="glass-panel flex items-center gap-3 rounded-2xl p-4 transition-colors duration-200 hover:border-accent"
+                className="flex items-center gap-3 transition-colors duration-200 hover:text-accent"
               >
                 <Phone className="size-5 shrink-0 text-accent" aria-hidden="true" />
                 <span className="text-sm text-foreground">{profile.phone}</span>
               </a>
+              <CopyButton text={profile.phone} label="Copy" />
             </li>
             <li>
               <a
