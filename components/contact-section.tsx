@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone } from 'lucide-react'
+import { ArrowRight, Mail, MapPin, Phone, Sparkles } from 'lucide-react'
 import { GithubIcon, LinkedinIcon } from '@/components/brand-icons'
 import { profile } from '@/lib/content/profile'
 import { ContactForm } from '@/components/contact-form'
@@ -16,19 +16,37 @@ export function ContactSection({ headingId = 'contact-heading' }: { headingId?: 
 
       <Reveal>
         <div className="mb-10 flex flex-col gap-2">
-          <p className="font-mono text-xs uppercase tracking-widest text-accent">Get In Touch</p>
+          <p className="font-mono text-xs uppercase tracking-widest text-accent">Start a Conversation</p>
           <h2 id={headingId} className="text-3xl font-bold tracking-tight md:text-4xl">
-            Contact Me
+            Let&apos;s Build Together
           </h2>
-          <p className="max-w-xl text-pretty leading-relaxed text-muted-foreground">
-            Hiring, collaborating, or discussing systems engineering? My inbox is always open, and direct contact options are available below.
+          <p className="max-w-2xl text-pretty leading-relaxed text-muted-foreground text-base">
+            Looking for an engineer who works fluidly across modern application code and bare-metal infrastructure?
+            Whether you are hiring for full-stack software development, DevOps automation, or technical systems roles, my inbox is open.
           </p>
         </div>
       </Reveal>
 
       <div className="flex flex-col gap-10 lg:flex-row">
         <Reveal className="flex-1">
-          <div className="neu-card rounded-2xl p-6 md:p-8 backdrop-blur-xl">
+          <div className="neu-card rounded-2xl p-6 md:p-8 backdrop-blur-xl border border-white/10 shadow-2xl">
+            {/* Value Proposition Callout Banner */}
+            <div className="mb-6 rounded-xl border border-accent/30 bg-accent/10 p-4">
+              <div className="flex items-center gap-2">
+                <Sparkles className="size-4 text-accent" aria-hidden="true" />
+                <p className="font-mono text-xs font-semibold uppercase tracking-wider text-accent">
+                  Available for Immediate Hire
+                </p>
+              </div>
+              <p className="mt-1 text-sm font-semibold text-foreground">
+                Looking for an engineer who bridges full-stack code and production infrastructure?
+              </p>
+              <p className="mt-1 font-mono text-xs text-accent/90 inline-flex items-center gap-1">
+                <span>Send a message below</span>
+                <ArrowRight className="size-3" />
+              </p>
+            </div>
+
             <ContactForm />
           </div>
         </Reveal>
@@ -83,7 +101,7 @@ export function ContactSection({ headingId = 'contact-heading' }: { headingId?: 
             </li>
           </ul>
           <p className="mt-4 font-mono text-xs leading-relaxed text-muted-foreground">
-            Professional references available on request.
+            Professional references available upon request.
           </p>
         </Reveal>
       </div>
