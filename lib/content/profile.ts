@@ -2,7 +2,10 @@ export const profile = {
   fullName: 'Emmanuel Leon Isheanesu Chinjekure',
   shortName: 'Emmanuel Chinjekure',
   handle: 'elic01',
-  title: 'Full-Stack Developer · Systems Administrator · Cybersecurity Enthusiast',
+  primaryRole: 'Full-Stack Software Engineer',
+  secondaryRole: 'DevOps & Infrastructure',
+  specialization: 'Systems Administration & Security',
+  title: 'Full-Stack Software Engineer · DevOps & Systems Infrastructure',
   currentRole: 'Final-Year B.Tech IT Student at Harare Institute of Technology · Former IT Intern at Cimas Health Group',
   location: 'Harare, Zimbabwe',
   email: 'emmanuelisheanesu2004@gmail.com',
@@ -15,9 +18,9 @@ export const profile = {
     linkedin: 'https://www.linkedin.com/in/emmanuel-l-i-chinjekure',
   },
   bio: [
-    'I build software, run infrastructure, and study how systems break. I recently completed an enterprise IT internship at Cimas Health Group, where I supported core infrastructure and network operations in a high-compliance health network. Currently, I am in my final year completing a B.Tech Honours in Information Technology at Harare Institute of Technology.',
-    'Outside university, I run a self-hosted homelab on a multi-node Proxmox VE cluster, build full-stack web applications with Next.js and TypeScript, and explore network security and identity architecture with HIT ISACA. I care about systems that stay up, clean readable code, and learning in public.',
+    'I am a Full-Stack Software Engineer with deep operational roots in DevOps, systems administration, and security. I build web applications with Next.js, TypeScript, and Python, backed by hands-on virtualization clusters on Proxmox VE and automated CI/CD pipelines.',
+    'Recently completed an enterprise IT internship at Cimas Health Group supporting healthcare infrastructure and compliance operations. Currently completing my final year in B.Tech Honours in Information Technology at Harare Institute of Technology.',
   ],
   availability:
-    'Open to entry-level and full-time roles in software engineering, DevOps, and IT systems administration.',
+    'Open to full-time and entry-level Software Engineering and DevOps roles.',
 } as const

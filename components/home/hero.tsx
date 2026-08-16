@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, Download, MapPin } from 'lucide-react'
+import { ArrowRight, Download, MapPin, Sparkles } from 'lucide-react'
 import { profile } from '@/lib/content/profile'
 import { Reveal } from '@/components/reveal'
 
@@ -21,10 +21,16 @@ export function Hero() {
         {/* Text Details Column */}
         <Reveal className="flex-1">
           <div className="flex flex-col gap-6">
-            <span className="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-secondary/60 backdrop-blur-md px-4 py-1.5 text-sm text-muted-foreground shadow-sm">
-              <MapPin className="size-3.5 text-accent" aria-hidden="true" />
-              {profile.location}
-            </span>
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="inline-flex w-fit items-center gap-2 rounded-full border border-accent/30 bg-accent/10 backdrop-blur-md px-3.5 py-1 text-xs font-mono font-semibold text-accent shadow-sm">
+                <Sparkles className="size-3.5 text-accent" aria-hidden="true" />
+                {profile.primaryRole}
+              </span>
+              <span className="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-secondary/60 backdrop-blur-md px-3.5 py-1 text-xs text-muted-foreground shadow-sm">
+                <MapPin className="size-3.5 text-accent" aria-hidden="true" />
+                {profile.location}
+              </span>
+            </div>
 
             <h1
               id="hero-heading"
@@ -35,9 +41,15 @@ export function Hero() {
               </span>
             </h1>
 
-            <p className="max-w-xl text-pretty text-lg text-muted-foreground md:text-xl font-medium">
-              {profile.title}
-            </p>
+            <div className="flex flex-col gap-1.5">
+              <p className="text-pretty text-lg font-semibold text-foreground md:text-xl">
+                {profile.primaryRole}
+              </p>
+              <p className="font-mono text-sm text-muted-foreground">
+                Secondary: <span className="text-violet font-medium">{profile.secondaryRole}</span> · Specialization:{' '}
+                <span className="text-terminal font-medium">{profile.specialization}</span>
+              </p>
+            </div>
 
             <p className="max-w-xl text-pretty text-base leading-relaxed text-muted-foreground">
               <span className="text-foreground font-semibold">{profile.currentRole}</span>.{' '}
@@ -49,7 +61,7 @@ export function Hero() {
                 href="/projects"
                 className="inline-flex items-center gap-2 rounded-xl bg-accent px-6 py-3 font-medium text-accent-foreground shadow-[0_0_24px_rgba(0,201,167,0.35)] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_32px_rgba(0,201,167,0.5)] active:scale-[0.98]"
               >
-                View My Work
+                View Projects
                 <ArrowRight className="size-4" aria-hidden="true" />
               </Link>
               <a

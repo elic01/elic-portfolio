@@ -1,7 +1,7 @@
-import { coreDailyDrivers, skillGroups } from '@/lib/content/skills'
+import { coreDailyDrivers, skillHierarchy } from '@/lib/content/skills'
 import { Reveal } from '@/components/reveal'
 import { cn } from '@/lib/utils'
-import { Cpu, Zap } from 'lucide-react'
+import { Layers, Zap } from 'lucide-react'
 
 const accentText: Record<string, string> = {
   accent: 'text-accent',
@@ -32,20 +32,20 @@ export function SkillsPreview() {
 
       <Reveal>
         <div className="mb-8 flex flex-col gap-2">
-          <p className="font-mono text-xs uppercase tracking-widest text-violet">Technical Stack</p>
+          <p className="font-mono text-xs uppercase tracking-widest text-violet">Capabilities &amp; Hierarchy</p>
           <h2 id="skills-heading" className="text-3xl font-bold tracking-tight md:text-4xl">
-            Skills &amp; Architecture
+            Skills &amp; Engineering Stack
           </h2>
         </div>
       </Reveal>
 
-      {/* Tier 1: Core Daily Drivers */}
+      {/* Core Daily Drivers */}
       <Reveal>
         <div className="mb-10 rounded-2xl border border-accent/30 bg-card/60 p-6 shadow-xl backdrop-blur-2xl">
           <div className="mb-4 flex items-center gap-2">
             <Zap className="size-4 text-accent" aria-hidden="true" />
             <p className="font-mono text-xs font-semibold uppercase tracking-wider text-accent">
-              Core Daily Drivers &amp; Production Stack
+              Core Daily Drivers (Production Stack)
             </p>
           </div>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -64,18 +64,34 @@ export function SkillsPreview() {
         </div>
       </Reveal>
 
-      {/* Categorized Skills Deep Dive */}
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {skillGroups.map((group, i) => (
-          <Reveal key={group.category} delay={i * 0.05}>
-            <div className={cn('neu-card neu-card-hover h-full rounded-2xl p-5 backdrop-blur-xl', accentBorder[group.accent])}>
-              <div className="mb-4 flex items-center gap-2">
-                <Cpu className={cn('size-3.5', accentText[group.accent])} aria-hidden="true" />
-                <h3 className={cn('font-mono text-xs font-semibold uppercase tracking-wider', accentText[group.accent])}>
-                  {group.category}
-                </h3>
+      {/* 3-Tier Professional Hierarchy */}
+      <div className="grid gap-6 md:grid-cols-3">
+        {skillHierarchy.map((group, i) => (
+          <Reveal key={group.title} delay={i * 0.08}>
+            <div className={cn('neu-card neu-card-hover flex h-full flex-col justify-between rounded-2xl p-6 backdrop-blur-xl', accentBorder[group.accent])}>
+              <div>
+                <div className="mb-3 flex items-center justify-between gap-2">
+                  <span className="font-mono text-xs font-bold uppercase tracking-wider text-muted-foreground">
+                    {group.tier}
+                  </span>
+                  <span className={cn('rounded-full border px-2.5 py-0.5 font-mono text-[11px] font-medium', group.badgeColor)}>
+                    {group.badge}
+                  </span>
+                </div>
+
+                <div className="mb-3 flex items-center gap-2">
+                  <Layers className={cn('size-4 shrink-0', accentText[group.accent])} aria-hidden="true" />
+                  <h3 className="font-semibold text-base text-foreground leading-snug">
+                    {group.title}
+                  </h3>
+                </div>
+
+                <p className="mb-6 text-xs leading-relaxed text-muted-foreground">
+                  {group.description}
+                </p>
               </div>
-              <ul className="flex flex-col gap-2.5">
+
+              <ul className="flex flex-col gap-3 border-t border-white/5 pt-4">
                 {group.skills.map((skill) => (
                   <li key={skill.name} className="flex items-center justify-between gap-2 text-xs">
                     <span className="text-foreground/90 font-medium">{skill.name}</span>
