@@ -9,7 +9,7 @@ import { ProjectDetailCard } from '@/components/projects/project-detail-card'
 export const metadata: Metadata = {
   title: 'DevOps & Infrastructure',
   description:
-    'Homelab infrastructure, self-hosting, and CI/CD by Emmanuel Chinjekure — Proxmox VE, Docker, PostgreSQL, Redis, and Authentik SSO.',
+    'Homelab infrastructure, self-hosting, and CI/CD by Emmanuel Chinjekure: Proxmox VE, Docker, PostgreSQL, Redis, and Authentik SSO.',
 }
 
 const infraProjects = projects.filter((p) => p.category === 'devops')
@@ -25,9 +25,9 @@ export default function DevOpsPage() {
           DevOps &amp; Infrastructure
         </h1>
         <p className="mb-12 max-w-2xl text-pretty leading-relaxed text-muted-foreground">
-          I run a production-style homelab the way a real ops team runs infrastructure —
-          hypervisor, containers, databases, and identity, all self-maintained. This is where
-          I turn theory into things that stay up.
+          I run a production-style homelab the way an engineering team runs infrastructure:
+          hypervisor virtualization, container workloads, databases, and centralized identity, all self-maintained.
+          This is where I turn architectural theory into reliable, self-healing systems.
         </p>
       </Reveal>
 

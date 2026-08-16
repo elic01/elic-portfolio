@@ -6,7 +6,7 @@ import { Reveal } from '@/components/reveal'
 export const metadata: Metadata = {
   title: 'Projects',
   description:
-    'Software projects by Emmanuel Chinjekure — full-stack development, homelab infrastructure, cybersecurity tools, and student platforms. Problem, solution, and impact for each.',
+    'Software projects by Emmanuel Chinjekure: full-stack development, homelab infrastructure, cybersecurity tools, and student platforms with problem, solution, and impact breakdowns.',
 }
 
 export default function ProjectsPage() {
@@ -20,8 +20,8 @@ export default function ProjectsPage() {
           Projects
         </h1>
         <p className="mb-12 max-w-2xl text-pretty leading-relaxed text-muted-foreground">
-          Each project is documented as problem, solution, and impact — not a feature list.
-          Use the category filters below to explore work across DevOps, Cybersecurity, and Full-Stack Software.
+          Each project is documented through its problem statement, technical solution, and measurable outcome.
+          Use the category filters below to explore work across DevOps, Cybersecurity, and Full-Stack Engineering.
         </p>
       </Reveal>
 

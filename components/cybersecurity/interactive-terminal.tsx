@@ -12,14 +12,14 @@ interface TerminalLine {
 
 const helpText = [
   'Available commands:',
-  '  whoami          — who is this guy?',
-  '  skills          — list technical skills',
-  '  tools           — list security & automation tools',
-  '  vuln-toolkit    — view Vulnerability Assessment Toolkit info',
-  '  certifications  — list certifications',
-  '  contact         — how to reach me',
-  '  clear           — clear the terminal',
-  '  help            — show this message',
+  '  whoami          : display background and role',
+  '  skills          : list technical skills across stack',
+  '  tools           : list security & infrastructure tools',
+  '  vuln-toolkit    : view Vulnerability Assessment Toolkit info',
+  '  certifications  : list current pursuits and education',
+  '  contact         : get email, phone, and GitHub links',
+  '  clear           : clear the terminal',
+  '  help            : show this message',
 ]
 
 function runCommand(cmd: string): string[] {
@@ -30,7 +30,7 @@ function runCommand(cmd: string): string[] {
         profile.fullName,
         profile.title,
         `Currently: ${profile.currentRole} · ${profile.location}`,
-        'HIT ISACA member · homelab operator · ethical hacking enthusiast.',
+        'HIT ISACA member · homelab operator · cybersecurity enthusiast.',
       ]
     case 'skills':
       return skillGroups.map(
@@ -57,18 +57,18 @@ function runCommand(cmd: string): string[] {
     }
     case 'certifications':
       return [
-        'No formal certifications yet — currently pursuing:',
+        'Education & Current Pursuits:',
         '  - B.Tech Honours in Information Technology (HIT, 2027)',
-        '  - Building foundations via HIT ISACA & Microsoft Learn.',
+        '  - Active technical member at HIT ISACA and Microsoft Learn.',
       ]
     case 'contact':
       return [`email: ${profile.email}`, `phone: ${profile.phone}`, `github: ${profile.links.github}`]
     case 'sudo hire me':
       return [
         '[sudo] password for recruiter: ********',
-        'Access granted. Opening secure channel...',
+        'Access granted. Opening secure contact channel...',
         `--> mailto:${profile.email}`,
-        "Nice try — and yes, I'm available. Email me.",
+        "Nice try. Yes, I'm actively open to opportunities: let's connect.",
       ]
     case 'help':
       return helpText

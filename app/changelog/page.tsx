@@ -5,7 +5,7 @@ import { Reveal } from '@/components/reveal'
 export const metadata: Metadata = {
   title: 'Changelog',
   description:
-    'A running log of career and site milestones by Emmanuel Chinjekure — history is kept, never overwritten.',
+    'A running log of career and site milestones by Emmanuel Chinjekure: history is kept, never overwritten.',
 }
 
 function formatDate(iso: string) {
@@ -16,7 +16,7 @@ function formatDate(iso: string) {
 
 export default function ChangelogPage() {
   return (
-    <main className="mx-auto max-w-3xl px-4 py-16 md:px-6 md:py-20">
+    <main className="mx-auto max-w-3xl px-4 py-16 md:px-6 md:py-20 pt-24">
       <Reveal>
         <p className="mb-3 font-mono text-sm text-violet">
           <span className="text-muted-foreground">$</span> git log --reverse --pretty
@@ -25,8 +25,8 @@ export default function ChangelogPage() {
           Changelog
         </h1>
         <p className="mb-12 max-w-xl text-pretty leading-relaxed text-muted-foreground">
-          Career and site milestones, newest first. I keep the history instead of overwriting it —
-          the trajectory matters more than any single snapshot.
+          Career and site milestones, newest first. I keep historical progression visible because the
+          trajectory matters more than any single snapshot.
         </p>
       </Reveal>
 

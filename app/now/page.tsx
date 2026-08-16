@@ -5,12 +5,12 @@ import { Reveal } from '@/components/reveal'
 
 export const metadata: Metadata = {
   title: 'Now',
-  description: `What Emmanuel Chinjekure is working on, building, and learning right now — updated ${nowUpdated}.`,
+  description: `What Emmanuel Chinjekure is working on, building, and learning right now (updated ${nowUpdated}).`,
 }
 
 export default function NowPage() {
   return (
-    <main className="mx-auto max-w-3xl px-4 py-16 md:px-6 md:py-20">
+    <main className="mx-auto max-w-3xl px-4 py-16 md:px-6 md:py-20 pt-24">
       <Reveal>
         <p className="mb-3 font-mono text-sm text-accent">
           <span className="text-muted-foreground">$</span> cat /now

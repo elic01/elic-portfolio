@@ -21,8 +21,7 @@ export function ContactSection({ headingId = 'contact-heading' }: { headingId?: 
             Contact Me
           </h2>
           <p className="max-w-xl text-pretty leading-relaxed text-muted-foreground">
-            Hiring, collaborating, or just want to talk infrastructure? My inbox is open — and if
-            the form doesn&apos;t work on your network, the direct links below always will.
+            Hiring, collaborating, or discussing systems engineering? My inbox is always open, and direct contact options are available below.
           </p>
         </div>
       </Reveal>
@@ -84,7 +83,7 @@ export function ContactSection({ headingId = 'contact-heading' }: { headingId?: 
             </li>
           </ul>
           <p className="mt-4 font-mono text-xs leading-relaxed text-muted-foreground">
-            References available on request.
+            Professional references available on request.
           </p>
         </Reveal>
       </div>

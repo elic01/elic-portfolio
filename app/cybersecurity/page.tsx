@@ -9,29 +9,29 @@ import { projects } from '@/lib/content/projects'
 export const metadata: Metadata = {
   title: 'Cybersecurity',
   description:
-    'Cybersecurity focus areas & tooling by Emmanuel Chinjekure — vulnerability assessment, networking fundamentals, Linux hardening, identity management with Authentik, and HIT ISACA.',
+    'Cybersecurity focus areas and tooling by Emmanuel Chinjekure: vulnerability assessment, networking fundamentals, Linux hardening, identity management with Authentik, and HIT ISACA.',
 }
 
 const focusAreas = [
   {
     icon: Network,
     title: 'Networking Fundamentals',
-    body: 'TCP/IP, subnetting, and network troubleshooting — sharpened daily resolving network tickets across enterprise infrastructure at Cimas Health Group.',
+    body: 'TCP/IP, subnetting, and network troubleshooting, sharpened daily resolving enterprise network tickets at Cimas Health Group.',
   },
   {
     icon: Terminal,
     title: 'Linux & Hardening',
-    body: 'Day-to-day Linux administration across homelab VMs and containers: permissions, services, SSH hygiene, and keeping an attack surface small.',
+    body: 'Day-to-day Linux administration across homelab VMs and containers: permissions, services, SSH hygiene, and minimal attack surface principles.',
   },
   {
     icon: Fingerprint,
     title: 'Identity & Access Management',
-    body: 'Running Authentik as a centralized identity provider — SSO, OAuth2/OIDC flows, and policy-based access across every self-hosted service.',
+    body: 'Running Authentik as a centralized identity provider with SSO, OAuth2/OIDC flows, and policy-based access across all self-hosted services.',
   },
   {
     icon: ShieldCheck,
     title: 'Governance & Auditing',
-    body: 'Building foundations in information systems auditing and security protocols through HIT ISACA, plus exposure to high-compliance IT operations in healthcare.',
+    body: 'Building strong foundations in information systems auditing and security protocols through HIT ISACA, backed by hands-on healthcare IT operations.',
   },
 ]
 
@@ -49,8 +49,8 @@ export default function CybersecurityPage() {
             Cybersecurity
           </h1>
           <p className="mb-10 max-w-2xl text-pretty font-mono text-sm leading-relaxed text-muted-foreground">
-            Security is where my sysadmin and developer sides meet. Everything below is also
-            available in plain text — no terminal skills required.
+            Security is where my systems administration and developer backgrounds converge. All tool details
+            and focus areas are structured clearly below.
           </p>
         </Reveal>
 
@@ -88,7 +88,7 @@ export default function CybersecurityPage() {
                 <span className="text-terminal">##</span> Security Tools &amp; Projects
               </h2>
               <p className="mb-6 font-mono text-sm text-muted-foreground">
-                Security tooling, automated vulnerability scanning, and penetration auditing software.
+                Security tooling, automated vulnerability scanning, and attack surface reconnaissance software.
               </p>
             </Reveal>
             <div className="flex flex-col gap-8">
@@ -105,7 +105,7 @@ export default function CybersecurityPage() {
               <span className="text-terminal">##</span> Interactive Shell
             </h2>
             <p className="mb-6 font-mono text-sm text-muted-foreground">
-              Optional — everything the shell knows is already written on this page.
+              An interactive terminal simulation for quick command-line exploration.
             </p>
           </Reveal>
           <Reveal>
@@ -121,21 +121,20 @@ export default function CybersecurityPage() {
             <div className="rounded-xl border border-border bg-card/60 p-6">
               <ul className="flex list-disc flex-col gap-3 pl-5">
                 <li className="text-sm leading-relaxed text-muted-foreground">
-                  <span className="text-foreground">HIT ISACA member (2024–present)</span> —
-                  information systems auditing, IT governance, and security protocol fundamentals.
+                  <span className="text-foreground">HIT ISACA Member (2024–Present):</span> Information
+                  systems auditing, IT governance, and security protocol fundamentals.
                 </li>
                 <li className="text-sm leading-relaxed text-muted-foreground">
-                  <span className="text-foreground">Cimas Health Group IT internship</span> —
-                  hands-on exposure to security-conscious operations in a high-compliance
-                  healthcare environment.
+                  <span className="text-foreground">Cimas Health Group IT Internship:</span> Hands-on
+                  exposure to security-conscious operations in a high-compliance healthcare environment.
                 </li>
                 <li className="text-sm leading-relaxed text-muted-foreground">
-                  <span className="text-foreground">Homelab identity stack</span> — Authentik SSO
+                  <span className="text-foreground">Homelab Identity Architecture:</span> Authentik SSO
                   deployed in production-style conditions across self-hosted services.
                 </li>
                 <li className="text-sm leading-relaxed text-muted-foreground">
-                  <span className="text-foreground">Certifications</span> — none yet; this section
-                  will grow as they are earned (ISACA and cloud security tracks planned).
+                  <span className="text-foreground">Professional Certifications:</span> Actively pursuing
+                  ISACA and cloud security credentials.
                 </li>
               </ul>
             </div>

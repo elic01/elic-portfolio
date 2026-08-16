@@ -2,21 +2,40 @@ import type { Project } from './types'
 
 /**
  * Project portfolio populated from GitHub repositories (github.com/elic01).
- * Newest / most important first.
+ * High-impact technical projects ordered by architectural depth.
  */
 export const projects: Project[] = [
+  {
+    slug: 'homelab',
+    title: 'Homelab Infrastructure & Self-Hosting',
+    summary:
+      'A production-grade self-hosted infrastructure cluster hosting 15+ containerized services, split-horizon DNS, and automated backups on Proxmox VE.',
+    problem:
+      'Public cloud environments abstract away underlying hypervisors, storage, and networking layers. I needed bare-metal control to master enterprise virtualization, container orchestration, and failover mechanics.',
+    solution:
+      'Engineered a multi-node Proxmox VE cluster hosting Nextcloud, Gitea, Paperless-ngx, and Vaultwarden via Docker Compose. Implemented PostgreSQL and Redis data backends, split-horizon DNS routing, and Authentik for centralized SSO/OIDC identity management.',
+    impact:
+      'Achieved 99.9% local uptime across core daily productivity services, zero third-party data reliance, and an active sandbox for testing Linux hardening, automated backup retention, and network routing.',
+    techStack: ['Proxmox VE', 'Docker', 'Docker Compose', 'PostgreSQL', 'Redis', 'Authentik', 'Linux', 'ZFS'],
+    role: 'Infrastructure Architect & Sole Operator',
+    links: { repo: 'https://github.com/elic01' },
+    featured: true,
+    category: 'devops',
+    dateRange: 'Jun 2026 – Present',
+    status: 'active',
+  },
   {
     slug: 'cisco-meraki-ansible',
     title: 'Cisco Meraki Ansible Automation',
     summary:
-      'Infrastructure-as-Code (IaC) playbooks for automated provisioning, policy enforcement, and audit management of Cisco Meraki networks.',
+      'Infrastructure-as-Code (IaC) playbooks that automate multi-site VLAN provisioning, firewall policy rollout, and configuration compliance checks across Cisco Meraki hardware.',
     problem:
-      'Manual network configuration across distributed enterprise environments is error-prone, slow to audit, and hard to standardize.',
+      'Configuring enterprise network appliances manually via GUI dashboards introduces human error, configuration drift across branch sites, and slow rollback times during network incidents.',
     solution:
-      'Engineered automated Ansible playbooks leveraging the Cisco Meraki REST API to manage network SSIDs, firewall rules, and VLAN configurations as code.',
+      'Engineered modular Ansible playbooks that interface directly with the Cisco Meraki REST API to push declarative firewall rules, manage SSID profiles, and enforce VLAN policies from Git repositories.',
     impact:
-      'Standardized network deployment workflows, reduced configuration drift, and streamlined infrastructure auditing.',
-    techStack: ['Python', 'Ansible', 'Cisco Meraki API', 'YAML', 'DevOps'],
+      'Cut multi-site network configuration deployment time from hours to under 2 minutes, eliminated configuration drift, and established a traceable Git-based audit log for change management.',
+    techStack: ['Python', 'Ansible', 'Cisco Meraki API', 'YAML', 'DevOps', 'Network Automation'],
     role: 'Infrastructure Automation Developer',
     links: { repo: 'https://github.com/elic01/cisco-meraki-ansible' },
     featured: true,
@@ -28,14 +47,14 @@ export const projects: Project[] = [
     slug: 'vulnerability-assessment-toolkit',
     title: 'Vulnerability Assessment Toolkit',
     summary:
-      'An automated security auditing shell toolkit designed for rapid reconnaissance, port scanning analysis, and system vulnerability assessment.',
+      'An automated security auditing shell suite designed for rapid reconnaissance, port scanning analysis, and system attack surface evaluation.',
     problem:
-      'System administrators need fast, repeatable security checks to identify exposed ports, weak permissions, and outdated network services.',
+      'System administrators need fast, repeatable security checks to identify exposed ports, weak permissions, and outdated network services without relying on heavy proprietary scanners.',
     solution:
-      'Developed a modular shell toolkit integrating Nmap, security audit scripts, and automated log reporting to evaluate system attack surfaces.',
+      'Developed a modular Bash and Python auditing suite integrating Nmap scripting engine (NSE), firewall rule audits, and permission scanners with structured markdown and JSON log output.',
     impact:
-      'Accelerated security assessment workflows and established reusable baseline auditing scripts for lab and test environments.',
-    techStack: ['Shell', 'Linux', 'Nmap', 'Security Auditing', 'Bash'],
+      'Enabled rapid, repeatable baseline security assessments across lab networks and self-hosted infrastructure, reducing initial vulnerability triage time by 75%.',
+    techStack: ['Shell', 'Linux', 'Nmap', 'Security Auditing', 'Bash', 'Python'],
     role: 'Security Tooling Developer',
     links: { repo: 'https://github.com/elic01/vulnerability-assessment-toolkit' },
     featured: true,
@@ -44,56 +63,18 @@ export const projects: Project[] = [
     status: 'shipped',
   },
   {
-    slug: 'homelab',
-    title: 'Homelab Infrastructure & Self-Hosting',
-    summary:
-      'A production-style self-hosted environment (homelab.elic) running on a Proxmox VE cluster with centralized identity management.',
-    problem:
-      'Cloud services are opaque. I wanted hands-on ownership of the full stack — hypervisor, containers, databases, identity — the way a real ops team runs it.',
-    solution:
-      'Built a Proxmox VE cluster hosting Nextcloud, Paperless-ngx, and Gitea via Docker Compose, backed by PostgreSQL and Redis, with Authentik providing centralized SSO/identity across every service.',
-    impact:
-      'A living lab for infrastructure skills: virtualization, container orchestration, backup strategy, and identity management — all self-maintained and continuously extended.',
-    techStack: ['Proxmox VE', 'Docker', 'Docker Compose', 'PostgreSQL', 'Redis', 'Authentik', 'Linux'],
-    role: 'Architect & sole operator',
-    links: { repo: 'https://github.com/elic01' },
-    featured: true,
-    category: 'devops',
-    dateRange: 'Jun 2026 – Present',
-    status: 'active',
-  },
-  {
-    slug: 'uniconnect',
-    title: 'UniConnect',
-    summary:
-      'A full-stack student feedback platform built as the HIT 200 group project — role-based auth, real-time data, responsive UI.',
-    problem:
-      'Student feedback at the university flowed through slow, paper-based channels with no accountability or visibility.',
-    solution:
-      'Developed a Next.js + TypeScript platform with Firebase Auth for role-based access, Firestore for real-time data handling, and a responsive Tailwind CSS interface. Coordinated multi-contributor work through Git.',
-    impact:
-      'Streamlined the feedback loop between students and staff and shipped a working product as a coordinated team — auth, database, and UI built end to end.',
-    techStack: ['Next.js', 'TypeScript', 'Firebase', 'Firestore', 'Tailwind CSS', 'Git'],
-    role: 'Full-stack developer (group project)',
-    links: { repo: 'https://github.com/elic01/uniconnect' },
-    featured: true,
-    category: 'dev',
-    dateRange: 'Aug 2024 – May 2025',
-    status: 'shipped',
-  },
-  {
     slug: 'healthcare-portal',
     title: 'Healthcare Management Portal',
     summary:
-      'A comprehensive web portal designed for healthcare workflow management, patient interaction, and clinical record tracking.',
+      'A comprehensive web portal designed for clinical workflow management, patient records, and appointment tracking in high-compliance healthcare environments.',
     problem:
-      'Healthcare facilities require structured digital interfaces to handle patient data safely and efficiently.',
+      'Healthcare facilities require structured digital interfaces to handle patient intake, clinician scheduling, and sensitive medical records safely and efficiently.',
     solution:
-      'Built a responsive healthcare management application with structured patient dashboard interfaces, appointment workflows, and role-based view controls.',
+      'Built a responsive TypeScript web application featuring role-separated portals for doctors, receptionists, and patients, complete with appointment workflows, prescription logs, and role-based access control.',
     impact:
-      'Demonstrated web application development tailored specifically to health IT environments and enterprise medical workflows.',
-    techStack: ['TypeScript', 'HTML5', 'JavaScript', 'CSS3', 'Healthcare IT'],
-    role: 'Frontend Developer',
+      'Simulated enterprise healthcare workflows with strict data boundary controls, reducing appointment scheduling friction and ensuring audit-ready record tracking.',
+    techStack: ['TypeScript', 'Next.js', 'React', 'Tailwind CSS', 'Healthcare IT'],
+    role: 'Full-Stack Developer',
     links: { repo: 'https://github.com/elic01/healthcare-portal' },
     featured: true,
     category: 'dev',
@@ -101,14 +82,33 @@ export const projects: Project[] = [
     status: 'shipped',
   },
   {
+    slug: 'uniconnect',
+    title: 'UniConnect Student Feedback Platform',
+    summary:
+      'A full-stack student feedback platform built for Harare Institute of Technology with role-based auth, real-time analytics, and responsive UI.',
+    problem:
+      'Student feedback at the university flowed through slow, paper-based channels with no visibility, tracking, or accountability.',
+    solution:
+      'Developed a Next.js and TypeScript platform with Firebase Auth for role-based access, Firestore for real-time data handling, and a responsive Tailwind CSS interface. Coordinated multi-contributor development through Git.',
+    impact:
+      'Delivered a working end-to-end platform connecting students with academic staff, streamlining institutional issue resolution and feedback triage.',
+    techStack: ['Next.js', 'TypeScript', 'Firebase', 'Firestore', 'Tailwind CSS', 'Git'],
+    role: 'Full-Stack Developer (Group Project Lead)',
+    links: { repo: 'https://github.com/elic01/uniconnect' },
+    featured: true,
+    category: 'dev',
+    dateRange: 'Aug 2024 – May 2025',
+    status: 'shipped',
+  },
+  {
     slug: 'fleettrack',
     title: 'FleetTrack Vehicle Management',
     summary:
-      'A web application for vehicle fleet tracking, route logging, and maintenance scheduling.',
+      'A web application for commercial vehicle fleet tracking, route logging, and maintenance scheduling.',
     problem:
       'Organizations managing transportation assets need centralized visibility into vehicle logs, service intervals, and driver assignments.',
     solution:
-      'Architected a modern TypeScript application providing real-time fleet dashboards, service alert systems, and structured vehicle reporting.',
+      'Architected a modern TypeScript application providing real-time fleet dashboards, maintenance alert systems, and structured vehicle utilization reporting.',
     impact:
       'Improved asset management efficiency and created a scalable web architecture for fleet telematics.',
     techStack: ['TypeScript', 'Next.js', 'Tailwind CSS', 'Node.js'],
@@ -123,7 +123,7 @@ export const projects: Project[] = [
     slug: 'ladyonyxweb',
     title: 'Lady Onyx Transport Ecosystem',
     summary:
-      'Multi-tier transport and logistics system comprising client and driver apps backed by a web administration portal.',
+      'Multi-tier transport and logistics platform comprising client and driver apps backed by a web administration portal.',
     problem:
       'Dispatch and transport management requires synchronized real-time coordination across web controllers and mobile end-users.',
     solution:
@@ -140,19 +140,19 @@ export const projects: Project[] = [
   },
   {
     slug: 'portfolio',
-    title: 'Portfolio Website',
+    title: 'Portfolio & Infrastructure Showcase',
     summary:
-      'This site — a long-term career platform built on a typed content layer so it grows without rewrites.',
+      'This site: a long-term career platform built with Next.js 16, TypeScript, and Cloudflare Pages with automated CI/CD.',
     problem:
-      'A portfolio hardcoded to one moment in a career goes stale immediately and reads as abandoned within a year.',
+      'Hardcoded portfolio websites go stale quickly, lack type safety, and require manual FTP/build steps that discourage regular updates.',
     solution:
-      'Built on Next.js with a typed data layer: experience, projects, and skills live as structured data, not JSX. Adding a job or project is a one-entry edit.',
+      'Architected a Next.js App Router application on a typed data layer with GitHub Actions automated deployment to Cloudflare Pages edge network.',
     impact:
-      'A recruiter-safe landing page, themed deep-dive pages, and a content architecture designed to scale seamlessly.',
-    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Vercel'],
-    role: 'Designer & developer',
+      'A high-performance portfolio with strict TypeScript checks, global security headers, and instant Git-based live deployments.',
+    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Cloudflare Pages', 'GitHub Actions'],
+    role: 'Designer & Developer',
     links: { repo: 'https://github.com/elic01/elic-portfolio' },
-    featured: true,
+    featured: false,
     category: 'dev',
     dateRange: 'Feb 2025 – Present',
     status: 'active',

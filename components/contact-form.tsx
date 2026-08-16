@@ -12,7 +12,7 @@ const contactSchema = z.object({
   email: z.string().email('Please enter a valid email address'),
   subject: z.string().min(3, 'Please enter a subject'),
   message: z.string().min(10, 'Please write at least a short message'),
-  // Honeypot — must stay empty
+  // Honeypot field (must stay empty)
   company: z.string().max(0).optional(),
 })
 
@@ -28,7 +28,7 @@ export function ContactForm() {
 
   function onSubmit(values: ContactValues) {
     if (values.company) return // honeypot triggered
-    const body = `${values.message}\n\n— ${values.name} (${values.email})`
+    const body = `${values.message}\n\nFrom: ${values.name} (${values.email})`
     const mailto = `mailto:${profile.email}?subject=${encodeURIComponent(values.subject)}&body=${encodeURIComponent(body)}`
     window.location.href = mailto
     setSent(true)
@@ -114,7 +114,7 @@ export function ContactForm() {
         {errors.message && <p className="text-xs text-destructive">{errors.message.message}</p>}
       </div>
 
-      {/* Honeypot field — hidden from real users */}
+      {/* Honeypot field (hidden from real users) */}
       <div className="sr-only" aria-hidden="true">
         <label htmlFor="contact-company">Company</label>
         <input id="contact-company" type="text" tabIndex={-1} autoComplete="off" {...register('company')} />

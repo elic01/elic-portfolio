@@ -3,7 +3,7 @@ export const profile = {
   shortName: 'Emmanuel Chinjekure',
   handle: 'elic01',
   title: 'Full-Stack Developer · Systems Administrator · Cybersecurity Enthusiast',
-  currentRole: 'Completing Studies at HIT · Former IT Intern at Cimas Health Group',
+  currentRole: 'Final-Year B.Tech IT Student at Harare Institute of Technology · Former IT Intern at Cimas Health Group',
   location: 'Harare, Zimbabwe',
   email: 'emmanuelisheanesu2004@gmail.com',
   phone: '+263 78 854 7017',
@@ -15,9 +15,9 @@ export const profile = {
     linkedin: 'https://www.linkedin.com/in/emmanuel-l-i-chinjekure',
   },
   bio: [
-    'I build software, run infrastructure, and study how systems break. Having completed my IT internship at Cimas Health Group — supporting enterprise IT infrastructure in a high-compliance health environment — I am currently completing my studies towards a B.Tech Honours in Information Technology at Harare Institute of Technology.',
-    'Outside of university I run a self-hosted homelab on a Proxmox VE cluster, build full-stack products with Next.js and TypeScript, and dig into identity management and network security through HIT ISACA. I care about systems that stay up, code that stays readable, and learning in public.',
+    'I build software, run infrastructure, and study how systems break. I recently completed an enterprise IT internship at Cimas Health Group, where I supported core infrastructure and network operations in a high-compliance health network. Currently, I am in my final year completing a B.Tech Honours in Information Technology at Harare Institute of Technology.',
+    'Outside university, I run a self-hosted homelab on a multi-node Proxmox VE cluster, build full-stack web applications with Next.js and TypeScript, and explore network security and identity architecture with HIT ISACA. I care about systems that stay up, clean readable code, and learning in public.',
   ],
   availability:
-    'Open to entry-level and full-time roles in software development, DevOps, or IT systems administration.',
+    'Open to entry-level and full-time roles in software engineering, DevOps, and IT systems administration.',
 } as const

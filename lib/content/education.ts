@@ -10,7 +10,7 @@ export const education: Education[] = [
   },
 ]
 
-/** Certifications accumulate independently of jobs — append here as earned. */
+/** Certifications accumulate independently of jobs: append here as earned. */
 export const certifications: { name: string; issuer: string; year: string }[] = []
 
 export const organizations: Organization[] = [
@@ -19,28 +19,28 @@ export const organizations: Organization[] = [
     role: 'Member',
     since: '2023',
     description:
-      'Active participant in technical workshops and regional events including DevFest and Build with AI Harare.',
+      'Active participant in technical workshops and regional developer events including DevFest and Build with AI Harare.',
   },
   {
     name: 'Microsoft Learn Student Ambassadors',
     role: 'Member',
     since: '2023',
     description:
-      'Engaging with Microsoft platforms and student community resources to promote technology literacy on campus.',
+      'Engaging with developer tools and cloud computing resources to support technology literacy on campus.',
   },
   {
     name: 'HIT ISACA',
     role: 'Member',
     since: '2024',
     description:
-      'Cybersecurity and IT governance — building foundations in information systems auditing and security protocols.',
+      'Cybersecurity and IT governance chapter focusing on information systems auditing and security protocols.',
   },
   {
     name: 'UNESCO O3 Plus',
     role: 'Peer Educator & Entertainment Director',
     since: '2024',
     description:
-      'Leading student-focused events and health/wellness communication — logistics, planning, and crowd management.',
+      'Leading student health and wellness communication alongside event logistics and student engagement initiatives.',
   },
 ]
 
