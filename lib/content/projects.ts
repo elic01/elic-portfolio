@@ -15,7 +15,7 @@ export const projects: Project[] = [
     solution:
       'Engineered a multi-node Proxmox VE cluster hosting Nextcloud, Gitea, Paperless-ngx, and Vaultwarden via Docker Compose. Implemented PostgreSQL and Redis data backends, split-horizon DNS routing, and Authentik for centralized SSO/OIDC identity management.',
     impact:
-      'Achieved 99.9% local uptime across core daily productivity services, zero third-party data reliance, and an active sandbox for testing Linux hardening, automated backup retention, and network routing.',
+      'Maintains 15+ containerized daily productivity services with automated ZFS snapshot backups, split-horizon DNS routing, and centralized Authentik SSO authentication, eliminating reliance on third-party cloud tools.',
     techStack: ['Proxmox VE', 'Docker', 'Docker Compose', 'PostgreSQL', 'Redis', 'Authentik', 'Linux', 'ZFS'],
     role: 'Infrastructure Architect & Sole Operator',
     links: { repo: 'https://github.com/elic01' },
@@ -34,7 +34,7 @@ export const projects: Project[] = [
     solution:
       'Engineered modular Ansible playbooks that interface directly with the Cisco Meraki REST API to push declarative firewall rules, manage SSID profiles, and enforce VLAN policies from Git repositories.',
     impact:
-      'Cut multi-site network configuration deployment time from hours to under 2 minutes, eliminated configuration drift, and established a traceable Git-based audit log for change management.',
+      'Automated multi-site network configuration via declarative playbooks, reducing manual dashboard provisioning steps to a single executable script with complete Git-based change tracking.',
     techStack: ['Python', 'Ansible', 'Cisco Meraki API', 'YAML', 'DevOps', 'Network Automation'],
     role: 'Infrastructure Automation Developer',
     links: { repo: 'https://github.com/elic01/cisco-meraki-ansible' },
@@ -53,7 +53,7 @@ export const projects: Project[] = [
     solution:
       'Developed a modular Bash and Python auditing suite integrating Nmap scripting engine (NSE), firewall rule audits, and permission scanners with structured markdown and JSON log output.',
     impact:
-      'Enabled rapid, repeatable baseline security assessments across lab networks and self-hosted infrastructure, reducing initial vulnerability triage time by 75%.',
+      'Automated repetitive port scanning, service versioning, and attack surface enumeration, replacing manual CLI triage with structured JSON and Markdown audit reports.',
     techStack: ['Shell', 'Linux', 'Nmap', 'Security Auditing', 'Bash', 'Python'],
     role: 'Security Tooling Developer',
     links: { repo: 'https://github.com/elic01/vulnerability-assessment-toolkit' },
@@ -72,7 +72,7 @@ export const projects: Project[] = [
     solution:
       'Built a responsive TypeScript web application featuring role-separated portals for doctors, receptionists, and patients, complete with appointment workflows, prescription logs, and role-based access control.',
     impact:
-      'Simulated enterprise healthcare workflows with strict data boundary controls, reducing appointment scheduling friction and ensuring audit-ready record tracking.',
+      'Implemented role-separated clinical workflows with strict role-based access control (RBAC), structured appointment scheduling, and audit-ready patient records.',
     techStack: ['TypeScript', 'Next.js', 'React', 'Tailwind CSS', 'Healthcare IT'],
     role: 'Full-Stack Developer',
     links: { repo: 'https://github.com/elic01/healthcare-portal' },
@@ -91,7 +91,7 @@ export const projects: Project[] = [
     solution:
       'Developed a Next.js and TypeScript platform with Firebase Auth for role-based access, Firestore for real-time data handling, and a responsive Tailwind CSS interface. Coordinated multi-contributor development through Git.',
     impact:
-      'Delivered a working end-to-end platform connecting students with academic staff, streamlining institutional issue resolution and feedback triage.',
+      'Built and deployed an end-to-end feedback platform connecting students with departmental academic staff, replacing paper-based complaints with real-time status tracking.',
     techStack: ['Next.js', 'TypeScript', 'Firebase', 'Firestore', 'Tailwind CSS', 'Git'],
     role: 'Full-Stack Developer (Group Project Lead)',
     links: { repo: 'https://github.com/elic01/uniconnect' },
@@ -110,7 +110,7 @@ export const projects: Project[] = [
     solution:
       'Architected a modern TypeScript application providing real-time fleet dashboards, maintenance alert systems, and structured vehicle utilization reporting.',
     impact:
-      'Improved asset management efficiency and created a scalable web architecture for fleet telematics.',
+      'Delivered a centralized vehicle tracking dashboard providing service interval alerts and driver activity logging.',
     techStack: ['TypeScript', 'Next.js', 'Tailwind CSS', 'Node.js'],
     role: 'Full-Stack Developer',
     links: { repo: 'https://github.com/elic01/fleettrack' },
@@ -129,7 +129,7 @@ export const projects: Project[] = [
     solution:
       'Developed full-stack web interfaces in TypeScript alongside Flutter mobile clients for seamless multi-platform interaction.',
     impact:
-      'Delivered a unified cross-platform product suite connecting administrative oversight with mobile operations.',
+      'Delivered a unified cross-platform product suite connecting administrative dispatch oversight with mobile customer bookings.',
     techStack: ['TypeScript', 'Dart', 'Flutter', 'React', 'REST API'],
     role: 'Full-Stack & Mobile Developer',
     links: { repo: 'https://github.com/elic01/ladyonyxweb' },
@@ -148,7 +148,7 @@ export const projects: Project[] = [
     solution:
       'Architected a Next.js App Router application on a typed data layer with GitHub Actions automated deployment to Cloudflare Pages edge network.',
     impact:
-      'A high-performance portfolio with strict TypeScript checks, global security headers, and instant Git-based live deployments.',
+      'Production platform featuring strict TypeScript validation, global security headers, and automated Git-based edge deployments.',
     techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Cloudflare Pages', 'GitHub Actions'],
     role: 'Designer & Developer',
     links: { repo: 'https://github.com/elic01/elic-portfolio' },
