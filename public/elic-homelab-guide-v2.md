@@ -656,7 +656,7 @@ qm set 9000 --serial0 socket --vga serial0
 
 qm set 9000 \
   --ciuser ubuntu \
-  --cipassword 'HomeLab@ZW2025!'   # ← CHANGE THIS
+  --cipassword 'SECURE_CLUSTER_PASSWORD'   # ← CHANGE THIS
   --ipconfig0 ip=dhcp
 
 qm resize 9000 scsi0 30G
@@ -2144,7 +2144,7 @@ services:
     environment:
       - DB_HOSTNAME=database
       - DB_USERNAME=postgres
-      - DB_PASSWORD=ImmichDB@2025!          # ← CHANGE THIS
+      - DB_PASSWORD=SECURE_DB_PASSWORD          # ← CHANGE THIS
       - DB_DATABASE_NAME=immich
       - REDIS_HOSTNAME=redis
       - TZ=Africa/Harare
@@ -2174,7 +2174,7 @@ services:
     container_name: immich_postgres
     restart: always
     environment:
-      - POSTGRES_PASSWORD=ImmichDB@2025!    # ← MATCH ABOVE
+      - POSTGRES_PASSWORD=SECURE_DB_PASSWORD    # ← MATCH ABOVE
       - POSTGRES_USER=postgres
       - POSTGRES_DB=immich
     volumes:
@@ -2243,7 +2243,7 @@ services:
       - PAPERLESS_TIME_ZONE=Africa/Harare
       - PAPERLESS_URL=https://docs.elic01.dev
       - PAPERLESS_ADMIN_USER=admin
-      - PAPERLESS_ADMIN_PASSWORD=Admin@Paperless2025!   # ← CHANGE THIS
+      - PAPERLESS_ADMIN_PASSWORD=SECURE_ADMIN_PASSWORD   # ← CHANGE THIS
     volumes:
       - /opt/appdata/paperless/data:/usr/src/paperless/data
       - /opt/appdata/paperless/media:/usr/src/paperless/media
@@ -2607,7 +2607,7 @@ services:
     network_mode: host       # REQUIRED for port 53 binding
     environment:
       - DNS_SERVER_DOMAIN=dns.elic01.dev
-      - DNS_SERVER_ADMIN_PASSWORD=Admin@HomeLab2025!    # ← CHANGE THIS
+      - DNS_SERVER_ADMIN_PASSWORD=SECURE_DNS_PASSWORD    # ← CHANGE THIS
     volumes:
       - /opt/appdata/technitium:/etc/dns
 EOF
@@ -2995,7 +2995,7 @@ services:
       - WEBHOOK_URL=https://n8n.elic01.dev
       - N8N_BASIC_AUTH_ACTIVE=true
       - N8N_BASIC_AUTH_USER=admin
-      - N8N_BASIC_AUTH_PASSWORD=N8n@HomeLab2025!    # ← CHANGE THIS
+      - N8N_BASIC_AUTH_PASSWORD=SECURE_N8N_PASSWORD    # ← CHANGE THIS
       - GENERIC_TIMEZONE=Africa/Harare
       - N8N_RUNNERS_ENABLED=true
     volumes:
@@ -3032,7 +3032,7 @@ services:
     environment:
       - PORT=3000
       - FLOWISE_USERNAME=admin
-      - FLOWISE_PASSWORD=Flowise@HomeLab2025!    # ← CHANGE THIS
+      - FLOWISE_PASSWORD=SECURE_FLOWISE_PASSWORD    # ← CHANGE THIS
       - DATABASE_PATH=/root/.flowise
     volumes:
       - /opt/appdata/flowise:/root/.flowise
@@ -3060,8 +3060,8 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Africa/Harare
-      - PASSWORD=Code@HomeLab2025!         # ← CHANGE THIS
-      - SUDO_PASSWORD=Sudo@HomeLab2025!    # ← CHANGE THIS
+      - PASSWORD=SECURE_CODE_PASSWORD         # ← CHANGE THIS
+      - SUDO_PASSWORD=SECURE_SUDO_PASSWORD    # ← CHANGE THIS
       - DEFAULT_WORKSPACE=/config/workspace
     volumes:
       - /opt/appdata/code-server:/config
@@ -3576,13 +3576,13 @@ curl -sk https://vault.elic01.dev
 |---------|----------|-----------------------|
 | All PVE Hosts | root | Set during install |
 | PBS Node5 | root | Set during install |
-| Ubuntu VMs | ubuntu | HomeLab@ZW2025! |
+| Ubuntu VMs | ubuntu | SECURE_CLUSTER_PASSWORD |
 | Grafana | admin | Homelab@ZW2025! |
-| n8n | admin | N8n@HomeLab2025! |
-| Code Server | — | Code@HomeLab2025! |
-| Flowise | admin | Flowise@HomeLab2025! |
-| Paperless | admin | Admin@Paperless2025! |
-| Technitium | admin | Admin@HomeLab2025! |
+| n8n | admin | SECURE_N8N_PASSWORD |
+| Code Server | — | SECURE_CODE_PASSWORD |
+| Flowise | admin | SECURE_FLOWISE_PASSWORD |
+| Paperless | admin | SECURE_ADMIN_PASSWORD |
+| Technitium | admin | SECURE_DNS_PASSWORD |
 | Portainer | admin | Set on first login |
 | Nextcloud | admin | Set by AIO wizard |
 | Gitea | — | Set during setup wizard |

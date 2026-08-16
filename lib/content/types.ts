@@ -13,6 +13,11 @@ export interface Experience {
 
 export type ProjectCategory = 'dev' | 'security' | 'devops'
 
+export interface ProjectImage {
+  url: string
+  caption: string
+}
+
 export interface Project {
   slug: string
   title: string
@@ -22,11 +27,14 @@ export interface Project {
   impact: string
   techStack: string[]
   role: string
-  links: { repo?: string; demo?: string }
+  links: { repo?: string; demo?: string; guide?: string }
   featured: boolean
   category: ProjectCategory
   dateRange: string
   status: 'active' | 'shipped' | 'archived'
+  images?: ProjectImage[]
+  architectureDiagram?: string
+  highlights?: string[]
 }
 
 export interface SkillGroup {

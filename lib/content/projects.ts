@@ -2,7 +2,7 @@ import type { Project } from './types'
 
 /**
  * Project portfolio populated from GitHub repositories (github.com/elic01).
- * High-impact technical projects ordered by architectural depth.
+ * High-impact technical projects ordered by architectural depth with full case study evidence.
  */
 export const projects: Project[] = [
   {
@@ -18,11 +18,36 @@ export const projects: Project[] = [
       'Maintains 15+ containerized daily productivity services with automated ZFS snapshot backups, split-horizon DNS routing, and centralized Authentik SSO authentication, eliminating reliance on third-party cloud tools.',
     techStack: ['Proxmox VE', 'Docker', 'Docker Compose', 'PostgreSQL', 'Redis', 'Authentik', 'Linux', 'ZFS'],
     role: 'Infrastructure Architect & Sole Operator',
-    links: { repo: 'https://github.com/elic01' },
+    links: { repo: 'https://github.com/elic01', guide: '/elic-homelab-guide-v2.md' },
     featured: true,
     category: 'devops',
     dateRange: 'Jun 2026 – Present',
     status: 'active',
+    architectureDiagram: `                Public Internet / Local Network
+                               │
+                     Cloudflare DNS / Proxy
+                               │
+               Traefik Reverse Proxy (*.elic01.dev)
+                               │
+               ┌───────────────┴───────────────┐
+               ▼                               ▼
+        Authentik SSO (IdP)          Containerized Services
+      (OAuth2 / OIDC / LDAP)       (Nextcloud, Gitea, Immich)
+               │                               │
+               └───────────────┬───────────────┘
+                               ▼
+                      Proxmox VE Cluster
+                    (5x EliteDesk Nodes)
+                               │
+               ┌───────────────┴───────────────┐
+               ▼                               ▼
+       PostgreSQL / Redis              ZFS / PBS Backups`,
+    highlights: [
+      '5-Node Bare-metal Proxmox VE cluster running on AMD Ryzen hardware.',
+      'Split-horizon DNS architecture resolving *.elic01.dev with wildcard Let’s Encrypt certificates.',
+      'Centralized Authentik identity provider protecting Nextcloud, Paperless-ngx, and Gitea.',
+      'Automated Proxmox Backup Server (PBS) scheduled snapshots and deduplicated storage retention.',
+    ],
   },
   {
     slug: 'cisco-meraki-ansible',
@@ -42,6 +67,13 @@ export const projects: Project[] = [
     category: 'devops',
     dateRange: 'Aug 2026',
     status: 'shipped',
+    architectureDiagram: `Git Repository (IaC) ──► Ansible Engine ──► Meraki REST API ──► Enterprise Edge Hardware
+ (declarative YAML)        (playbook tasks)   (HTTPS / Token)       (VLANs, SSIDs, Firewall)`,
+    highlights: [
+      'Declarative Infrastructure-as-Code eliminates manual configuration drift across branch sites.',
+      'Automated VLAN allocation, guest isolation, and egress filtering rules.',
+      'Full Git revision history enabling instant rollback during network configuration incidents.',
+    ],
   },
   {
     slug: 'vulnerability-assessment-toolkit',
@@ -61,6 +93,13 @@ export const projects: Project[] = [
     category: 'security',
     dateRange: 'Aug 2026',
     status: 'shipped',
+    architectureDiagram: `Target Network / IP ──► Host & Port Recon ──► NSE Vulnerability Audits ──► Structured Report
+ (CIDR Input Range)        (Nmap Engine)          (CVE & Service Probes)       (Markdown & JSON)`,
+    highlights: [
+      'Automates multi-phase network reconnaissance and service fingerprinting.',
+      'Integrates Nmap Scripting Engine (NSE) for common vulnerability and misconfiguration detection.',
+      'Generates machine-parsable JSON output and clean Markdown audit summaries.',
+    ],
   },
   {
     slug: 'healthcare-portal',
@@ -80,6 +119,17 @@ export const projects: Project[] = [
     category: 'dev',
     dateRange: 'Feb 2026',
     status: 'shipped',
+    images: [
+      { url: '/healthcare-portal-home.png', caption: 'Clinical Dashboard & Patient Management Overview' },
+      { url: '/healthcare-portal-features.png', caption: 'Feature Breakdown & Appointment Scheduling System' },
+    ],
+    architectureDiagram: `Next.js Web App ──► RBAC Auth Middleware ──► Clinical Controllers ──► Encrypted Health DB
+(Doctor/Patient UI)  (Session Verification)  (Intake, Prescriptions) (Audit Trail Logs)`,
+    highlights: [
+      'Role-separated interfaces for doctors, receptionists, and patients.',
+      'Digital patient intake, scheduling workflows, and prescription tracking.',
+      'Designed with strict data boundaries mirroring enterprise health compliance standards.',
+    ],
   },
   {
     slug: 'uniconnect',
@@ -99,6 +149,17 @@ export const projects: Project[] = [
     category: 'dev',
     dateRange: 'Aug 2024 – May 2025',
     status: 'shipped',
+    images: [
+      { url: '/uniconnect-landing.png', caption: 'UniConnect Platform Landing Page' },
+      { url: '/uniconnect-about.png', caption: 'System Architecture & About UniConnect Interface' },
+    ],
+    architectureDiagram: `Next.js Frontend ──► Firebase Auth (RBAC) ──► Firestore Realtime DB ──► Staff Triage Dashboard
+(Student Portal)      (Institutional Login)    (Live Ticket Updates)       (Resolution Workflow)`,
+    highlights: [
+      'Led group engineering and Git collaboration for HIT campus platform.',
+      'Real-time status updates and department-level issue routing.',
+      'Responsive interface optimized for mobile and desktop campus devices.',
+    ],
   },
   {
     slug: 'fleettrack',
@@ -118,6 +179,13 @@ export const projects: Project[] = [
     category: 'dev',
     dateRange: 'Aug 2026',
     status: 'active',
+    images: [
+      { url: '/fleettrack-dashboard.png', caption: 'FleetTrack Commercial Vehicle Telematics Dashboard' },
+    ],
+    highlights: [
+      'Centralized fleet dashboard with real-time vehicle telematics and status logs.',
+      'Automated maintenance scheduling alerts based on mileage and service intervals.',
+    ],
   },
   {
     slug: 'ladyonyxweb',
@@ -137,6 +205,13 @@ export const projects: Project[] = [
     category: 'dev',
     dateRange: 'Aug 2026',
     status: 'active',
+    images: [
+      { url: '/lady-onyx-web.png', caption: 'Lady Onyx Transport Web Administration Portal' },
+    ],
+    highlights: [
+      'Multi-tier dispatch ecosystem connecting administrators, drivers, and clients.',
+      'Cross-platform synchronization between web admin console and mobile client apps.',
+    ],
   },
   {
     slug: 'portfolio',
@@ -156,6 +231,13 @@ export const projects: Project[] = [
     category: 'dev',
     dateRange: 'Feb 2025 – Present',
     status: 'active',
+    architectureDiagram: `GitHub Repository ──► GitHub Actions (CI/CD) ──► Cloudflare Edge Pages ──► Global CDN (HTTPS)
+ (main branch)          (lint, typecheck, build)   (Static Export / Headers)   (elic01.dev)`,
+    highlights: [
+      'Typed data architecture allowing instant updates without editing page JSX.',
+      'Integrated security headers (CSP, HSTS, Permissions-Policy, RFC 9116 security.txt).',
+      'Automated CI/CD pipeline deploying static exports to Cloudflare edge network.',
+    ],
   },
 ]
 
