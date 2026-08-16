@@ -10,8 +10,9 @@ import { cn } from '@/lib/utils'
 const navItems = [
   { href: '/', label: 'Home' },
   { href: '/projects', label: 'Projects' },
-  { href: '/cybersecurity', label: 'Cybersecurity' },
+  { href: '/homelab', label: 'Homelab' },
   { href: '/devops', label: 'DevOps' },
+  { href: '/cybersecurity', label: 'Cybersecurity' },
   { href: '/now', label: 'Now' },
   { href: '/contact', label: 'Contact' },
 ]
@@ -35,7 +36,7 @@ export function SiteNav() {
       className={cn(
         'fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ease-out',
         scrolled
-          ? 'top-3 w-[92%] max-w-5xl'
+          ? 'top-3 w-[94%] max-w-5xl'
           : 'top-0 w-full max-w-6xl px-4 md:px-6 pt-3',
       )}
     >

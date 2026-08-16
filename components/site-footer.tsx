@@ -31,11 +31,14 @@ export function SiteFooter() {
               <Link href="/projects" className="text-muted-foreground transition-colors hover:text-accent">
                 Projects
               </Link>
-              <Link href="/cybersecurity" className="text-muted-foreground transition-colors hover:text-accent">
-                Cybersecurity
+              <Link href="/homelab" className="text-muted-foreground transition-colors hover:text-accent">
+                Homelab
               </Link>
               <Link href="/devops" className="text-muted-foreground transition-colors hover:text-accent">
                 DevOps
+              </Link>
+              <Link href="/cybersecurity" className="text-muted-foreground transition-colors hover:text-accent">
+                Cybersecurity
               </Link>
               <Link href="/now" className="text-muted-foreground transition-colors hover:text-accent">
                 Now
