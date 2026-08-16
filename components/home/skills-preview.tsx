@@ -1,24 +1,24 @@
-import { coreDailyDrivers, skillHierarchy } from '@/lib/content/skills'
+import { coreDailyDrivers, ruthlessSkillTiers } from '@/lib/content/skills'
 import { Reveal } from '@/components/reveal'
 import { cn } from '@/lib/utils'
-import { Layers, Zap } from 'lucide-react'
+import { CheckCircle2, Flame, Layers, ShieldCheck, Zap } from 'lucide-react'
 
 const accentText: Record<string, string> = {
   accent: 'text-accent',
-  gold: 'text-gold',
   violet: 'text-violet',
-  ember: 'text-ember',
   terminal: 'text-terminal',
-  info: 'text-info',
 }
 
 const accentBorder: Record<string, string> = {
   accent: 'border-accent/30',
-  gold: 'border-gold/30',
   violet: 'border-violet/30',
-  ember: 'border-ember/30',
   terminal: 'border-terminal/30',
-  info: 'border-info/30',
+}
+
+const tierIcons = {
+  Strong: Flame,
+  'Working Knowledge': Layers,
+  Familiar: ShieldCheck,
 }
 
 export function SkillsPreview() {
@@ -32,10 +32,14 @@ export function SkillsPreview() {
 
       <Reveal>
         <div className="mb-8 flex flex-col gap-2">
-          <p className="font-mono text-xs uppercase tracking-widest text-violet">Capabilities &amp; Hierarchy</p>
+          <p className="font-mono text-xs uppercase tracking-widest text-accent">Interview Readiness</p>
           <h2 id="skills-heading" className="text-3xl font-bold tracking-tight md:text-4xl">
-            Skills &amp; Engineering Stack
+            Technical Stack &amp; Proficiency
           </h2>
+          <p className="max-w-2xl text-pretty text-sm text-muted-foreground">
+            Clear, honest technical categorization: what I use daily, what I have deployed in production,
+            and what I have explored.
+          </p>
         </div>
       </Reveal>
 
@@ -45,7 +49,7 @@ export function SkillsPreview() {
           <div className="mb-4 flex items-center gap-2">
             <Zap className="size-4 text-accent" aria-hidden="true" />
             <p className="font-mono text-xs font-semibold uppercase tracking-wider text-accent">
-              Core Daily Drivers (Production Stack)
+              Core Daily Drivers (Active Daily Stack)
             </p>
           </div>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -64,58 +68,52 @@ export function SkillsPreview() {
         </div>
       </Reveal>
 
-      {/* 3-Tier Professional Hierarchy */}
-      <div className="grid gap-6 md:grid-cols-3">
-        {skillHierarchy.map((group, i) => (
-          <Reveal key={group.title} delay={i * 0.08}>
-            <div className={cn('neu-card neu-card-hover flex h-full flex-col justify-between rounded-2xl p-6 backdrop-blur-xl', accentBorder[group.accent])}>
-              <div>
-                <div className="mb-3 flex items-center justify-between gap-2">
-                  <span className="font-mono text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                    {group.tier}
-                  </span>
-                  <span className={cn('rounded-full border px-2.5 py-0.5 font-mono text-[11px] font-medium', group.badgeColor)}>
-                    {group.badge}
-                  </span>
-                </div>
-
-                <div className="mb-3 flex items-center gap-2">
-                  <Layers className={cn('size-4 shrink-0', accentText[group.accent])} aria-hidden="true" />
-                  <h3 className="font-semibold text-base text-foreground leading-snug">
-                    {group.title}
-                  </h3>
-                </div>
-
-                <p className="mb-6 text-xs leading-relaxed text-muted-foreground">
-                  {group.description}
-                </p>
-              </div>
-
-              <ul className="flex flex-col gap-3 border-t border-white/5 pt-4">
-                {group.skills.map((skill) => (
-                  <li key={skill.name} className="flex items-center justify-between gap-2 text-xs">
-                    <span className="text-foreground/90 font-medium">{skill.name}</span>
-                    <span
-                      className="flex gap-0.5"
-                      aria-label={`Proficiency ${skill.proficiency} of 5, since ${skill.since}`}
-                    >
-                      {[1, 2, 3, 4, 5].map((level) => (
-                        <span
-                          key={level}
-                          aria-hidden="true"
-                          className={cn(
-                            'size-1.5 rounded-full transition-colors duration-300',
-                            level <= skill.proficiency ? 'bg-accent shadow-[0_0_6px_rgba(0,201,167,0.5)]' : 'bg-border/50',
-                          )}
-                        />
-                      ))}
+      {/* 3 Ruthless Interview-Readiness Tiers */}
+      <div className="grid gap-6 lg:grid-cols-3">
+        {ruthlessSkillTiers.map((tier, i) => {
+          const Icon = tierIcons[tier.level]
+          return (
+            <Reveal key={tier.level} delay={i * 0.08}>
+              <div
+                className={cn(
+                  'neu-card neu-card-hover flex h-full flex-col justify-between rounded-2xl p-6 backdrop-blur-xl',
+                  accentBorder[tier.accent],
+                )}
+              >
+                <div>
+                  <div className="mb-3 flex items-center justify-between gap-2">
+                    <div className="flex items-center gap-2">
+                      <Icon className={cn('size-4', accentText[tier.accent])} aria-hidden="true" />
+                      <h3 className="font-bold text-lg text-foreground">{tier.level}</h3>
+                    </div>
+                    <span className={cn('rounded-full border px-2.5 py-0.5 font-mono text-[11px] font-medium', tier.badgeColor)}>
+                      {tier.badge}
                     </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </Reveal>
-        ))}
+                  </div>
+
+                  <p className="mb-5 text-xs leading-relaxed text-muted-foreground border-b border-white/5 pb-4">
+                    {tier.description}
+                  </p>
+                </div>
+
+                <ul className="flex flex-col gap-3 pt-1">
+                  {tier.skills.map((skill) => (
+                    <li key={skill.name} className="flex flex-col gap-0.5 rounded-lg bg-secondary/30 p-2.5">
+                      <div className="flex items-center justify-between gap-2">
+                        <span className="text-xs font-semibold text-foreground flex items-center gap-1.5">
+                          <CheckCircle2 className={cn('size-3', accentText[tier.accent])} aria-hidden="true" />
+                          {skill.name}
+                        </span>
+                        <span className="font-mono text-[10px] text-muted-foreground">since {skill.since}</span>
+                      </div>
+                      <p className="text-[11px] text-muted-foreground/90 pl-4">{skill.context}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
+          )
+        })}
       </div>
     </section>
   )
