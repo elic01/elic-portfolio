@@ -3,8 +3,11 @@ export const profile = {
   shortName: 'Emmanuel Chinjekure',
   handle: 'elic01',
   primaryRole: 'Full-Stack Software Engineer',
-  secondaryRole: 'DevOps & Infrastructure',
+  secondaryRole: 'DevOps & Cloud Infrastructure',
   specialization: 'Systems Administration & Security',
+  headline: 'I build software and the infrastructure behind it.',
+  pitch:
+    'Full-stack engineer focused on TypeScript, Next.js, and Python, with hands-on depth in Linux virtualization, DevOps automation, and security architecture.',
   title: 'Full-Stack Software Engineer · DevOps & Systems Infrastructure',
   currentRole: 'Final-Year B.Tech IT Student at Harare Institute of Technology · Former IT Intern at Cimas Health Group',
   location: 'Harare, Zimbabwe',
@@ -18,8 +21,8 @@ export const profile = {
     linkedin: 'https://www.linkedin.com/in/emmanuel-l-i-chinjekure',
   },
   bio: [
-    'I am a Full-Stack Software Engineer with deep operational roots in DevOps, systems administration, and security. I build web applications with Next.js, TypeScript, and Python, backed by hands-on virtualization clusters on Proxmox VE and automated CI/CD pipelines.',
-    'Recently completed an enterprise IT internship at Cimas Health Group supporting healthcare infrastructure and compliance operations. Currently completing my final year in B.Tech Honours in Information Technology at Harare Institute of Technology.',
+    'I build software, run infrastructure, and study how systems break. I combine full-stack engineering with operational systems administration, building web applications with Next.js, TypeScript, and Python while managing production-style Proxmox VE virtualization clusters and automated CI/CD pipelines.',
+    'Recently completed an enterprise IT internship at Cimas Health Group supporting high-compliance healthcare infrastructure, Active Directory, and network operations. Currently completing my final year in B.Tech Honours in Information Technology at Harare Institute of Technology.',
   ],
   availability:
     'Open to full-time and entry-level Software Engineering and DevOps roles.',

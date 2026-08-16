@@ -32,31 +32,32 @@ export function Hero() {
               </span>
             </div>
 
-            <h1
-              id="hero-heading"
-              className="max-w-3xl text-balance text-4xl font-bold leading-[1.08] tracking-tight md:text-6xl lg:text-7xl"
-            >
-              <span className="bg-gradient-to-r from-foreground via-foreground to-accent bg-clip-text text-transparent">
+            <div className="flex flex-col gap-2">
+              <p className="font-mono text-sm uppercase tracking-widest text-muted-foreground">
                 {profile.fullName}
-              </span>
-            </h1>
-
-            <div className="flex flex-col gap-1.5">
-              <p className="text-pretty text-lg font-semibold text-foreground md:text-xl">
-                {profile.primaryRole}
               </p>
-              <p className="font-mono text-sm text-muted-foreground">
-                Secondary: <span className="text-violet font-medium">{profile.secondaryRole}</span> · Specialization:{' '}
-                <span className="text-terminal font-medium">{profile.specialization}</span>
-              </p>
+              <h1
+                id="hero-heading"
+                className="max-w-3xl text-balance text-4xl font-bold leading-[1.1] tracking-tight md:text-5xl lg:text-6xl"
+              >
+                <span className="bg-gradient-to-r from-foreground via-foreground to-accent bg-clip-text text-transparent">
+                  {profile.headline}
+                </span>
+              </h1>
             </div>
 
-            <p className="max-w-xl text-pretty text-base leading-relaxed text-muted-foreground">
-              <span className="text-foreground font-semibold">{profile.currentRole}</span>.{' '}
-              {profile.availability}
+            <p className="max-w-xl text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
+              {profile.pitch}
             </p>
 
-            <div className="flex flex-wrap items-center gap-4 pt-2">
+            <div className="rounded-xl border border-white/5 bg-secondary/30 p-3.5 font-mono text-xs text-muted-foreground">
+              <p>
+                <span className="text-foreground font-semibold">{profile.currentRole}</span>
+              </p>
+              <p className="mt-1 text-accent">{profile.availability}</p>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-4 pt-1">
               <Link
                 href="/projects"
                 className="inline-flex items-center gap-2 rounded-xl bg-accent px-6 py-3 font-medium text-accent-foreground shadow-[0_0_24px_rgba(0,201,167,0.35)] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_32px_rgba(0,201,167,0.5)] active:scale-[0.98]"
