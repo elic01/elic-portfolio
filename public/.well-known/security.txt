@@ -1,0 +1,5 @@
+Contact: mailto:emmanuelisheanesu2004@gmail.com
+Expires: 2027-12-31T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://elic01.dev/.well-known/security.txt
+Policy: https://elic01.dev/contact

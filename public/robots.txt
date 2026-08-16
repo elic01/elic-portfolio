@@ -1,0 +1,14 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://elic01.dev/sitemap.xml
+
+# Block aggressive AI scrapers
+User-Agent: CCBot
+Disallow: /
+
+User-Agent: Bytespider
+Disallow: /
+
+User-Agent: PetalBot
+Disallow: /
