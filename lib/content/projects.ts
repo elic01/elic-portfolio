@@ -150,8 +150,10 @@ export const projects: Project[] = [
     dateRange: 'Aug 2024 – May 2025',
     status: 'shipped',
     images: [
-      { url: '/uniconnect-landing.png', caption: 'UniConnect Platform Landing Page' },
-      { url: '/uniconnect-about.png', caption: 'System Architecture & About UniConnect Interface' },
+      { url: '/uniconnect-landing.png', caption: 'UniConnect Platform Landing Page & Navigation' },
+      { url: '/uniconnect-student-dashboard.png', caption: 'Student Dashboard & Feedback Submission Portal' },
+      { url: '/uniconnect-login.png', caption: 'Role-Based Authentication & Institutional Login' },
+      { url: '/uniconnect-about.png', caption: 'System Architecture & Platform Overview' },
     ],
     architectureDiagram: `Next.js Frontend ──► Firebase Auth (RBAC) ──► Firestore Realtime DB ──► Staff Triage Dashboard
 (Student Portal)      (Institutional Login)    (Live Ticket Updates)       (Resolution Workflow)`,
