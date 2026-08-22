@@ -18,7 +18,7 @@ export const projects: Project[] = [
       'Maintains 15+ containerized daily productivity services with automated ZFS snapshot backups, split-horizon DNS routing, and centralized Authentik SSO authentication, eliminating reliance on third-party cloud tools.',
     techStack: ['Proxmox VE', 'Docker', 'Docker Compose', 'PostgreSQL', 'Redis', 'Authentik', 'Linux', 'ZFS'],
     role: 'Infrastructure Architect & Sole Operator',
-    links: { repo: 'https://github.com/elic01', guide: '/elic-homelab-guide-v2.md' },
+    links: { repo: 'https://github.com/elic01', guide: '/homelab/runbook' },
     featured: true,
     category: 'devops',
     dateRange: 'Jun 2026 – Present',

@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { BookOpen, CheckCircle2, ExternalLink, Network } from 'lucide-react'
 import { GithubIcon } from '@/components/brand-icons'
 import type { Project } from '@/lib/content/types'
@@ -137,15 +138,25 @@ export function ProjectDetailCard({ project, index }: { project: Project; index:
 
             <div className="flex flex-wrap items-center gap-3">
               {project.links.guide && (
-                <a
-                  href={project.links.guide}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 rounded-lg border border-gold/40 bg-gold/10 px-3.5 py-1.5 text-xs font-mono text-gold transition-colors duration-200 hover:bg-gold/20"
-                >
-                  <BookOpen className="size-3.5" />
-                  Homelab Guide
-                </a>
+                project.links.guide.startsWith('/') ? (
+                  <Link
+                    href={project.links.guide}
+                    className="inline-flex items-center gap-1.5 rounded-lg border border-gold/40 bg-gold/10 px-3.5 py-1.5 text-xs font-mono text-gold transition-colors duration-200 hover:bg-gold/20"
+                  >
+                    <BookOpen className="size-3.5" />
+                    Homelab Runbook
+                  </Link>
+                ) : (
+                  <a
+                    href={project.links.guide}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-lg border border-gold/40 bg-gold/10 px-3.5 py-1.5 text-xs font-mono text-gold transition-colors duration-200 hover:bg-gold/20"
+                  >
+                    <BookOpen className="size-3.5" />
+                    Homelab Guide
+                  </a>
+                )
               )}
               {project.links.repo && (
                 <a

@@ -5,6 +5,7 @@ import {
   ArrowRight,
   BookOpen,
   Cpu,
+  FileDown,
   Fingerprint,
   HardDrive,
   Network,
@@ -334,14 +335,21 @@ Node 1 (Control Plane)        Node 2 (Productivity)          Node 3 (Net & Sec) 
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-3">
-              <a
-                href="/elic-homelab-guide-v2.md"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/homelab/runbook"
                 className="inline-flex items-center gap-2 rounded-xl bg-accent px-5 py-2.5 font-mono text-xs font-semibold text-accent-foreground shadow-[0_0_20px_rgba(0,201,167,0.3)] transition-transform hover:scale-105"
               >
                 <BookOpen className="size-4" />
-                Open Runbook
+                Open Interactive Runbook
+              </Link>
+              <a
+                href="/elic-homelab-guide-v2.md"
+                download="elic-homelab-infrastructure-guide-v2.md"
+                className="inline-flex items-center gap-2 rounded-xl border border-border bg-secondary/80 px-4 py-2.5 font-mono text-xs font-medium text-foreground transition-colors hover:bg-secondary hover:text-accent"
+                title="Download raw Markdown guide"
+              >
+                <FileDown className="size-4" />
+                Download .MD
               </a>
               <Link
                 href="/projects"

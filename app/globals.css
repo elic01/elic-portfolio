@@ -139,3 +139,206 @@
     transparent 4px
   );
 }
+
+/* ==========================================================================
+   Runbook Interactive Reader & PDF / Print Stylesheet
+   ========================================================================== */
+
+.runbook-article {
+  color: var(--foreground);
+  font-size: 0.9375rem;
+  line-height: 1.75;
+}
+
+.runbook-article p {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  color: var(--color-muted-foreground);
+}
+
+.runbook-article strong {
+  color: var(--foreground);
+  font-weight: 600;
+}
+
+.runbook-h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--foreground);
+}
+
+.runbook-h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 3rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--foreground);
+}
+
+.runbook-h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+}
+
+.runbook-h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--foreground);
+  font-family: var(--font-mono);
+}
+
+.runbook-article ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: var(--color-muted-foreground);
+}
+
+.runbook-article ol {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: var(--color-muted-foreground);
+}
+
+.runbook-article li {
+  margin-top: 0.35rem;
+  margin-bottom: 0.35rem;
+}
+
+.runbook-article li::marker {
+  color: var(--color-accent);
+}
+
+.runbook-article code:not(pre code) {
+  font-family: var(--font-mono);
+  font-size: 0.82em;
+  padding: 0.15em 0.4em;
+  border-radius: 0.375rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--color-accent);
+}
+
+.runbook-table-container table th {
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.runbook-table-container table td {
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.runbook-table-container table tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.015);
+}
+
+/* Print Styles: PDF Generation Optimization */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 1.8cm 1.5cm;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #111827 !important;
+    font-size: 10pt !important;
+    line-height: 1.5 !important;
+  }
+
+  .print\:hidden {
+    display: none !important;
+  }
+
+  .runbook-article {
+    color: #111827 !important;
+  }
+
+  .runbook-article p,
+  .runbook-article ul,
+  .runbook-article ol {
+    color: #374151 !important;
+  }
+
+  .runbook-h1,
+  .runbook-h2,
+  .runbook-h3,
+  .runbook-h4 {
+    color: #0f172a !important;
+    border-bottom-color: #cbd5e1 !important;
+  }
+
+  .runbook-phase-heading {
+    page-break-before: always !important;
+    break-before: page !important;
+  }
+
+  .runbook-code-block {
+    background: #f8fafc !important;
+    border: 1px solid #cbd5e1 !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    box-shadow: none !important;
+  }
+
+  .runbook-code-block pre,
+  .runbook-code-block code {
+    color: #0f172a !important;
+    font-size: 8.5pt !important;
+    white-space: pre-wrap !important;
+    word-break: break-word !important;
+  }
+
+  .runbook-code-block button {
+    display: none !important;
+  }
+
+  .runbook-callout {
+    background: #f1f5f9 !important;
+    border-left: 4px solid #0284c7 !important;
+    color: #0f172a !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .runbook-table-container {
+    background: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .runbook-table-container table th {
+    background: #f1f5f9 !important;
+    color: #0f172a !important;
+  }
+
+  .runbook-table-container table td {
+    color: #334155 !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+  }
+
+  .runbook-article code:not(pre code) {
+    background: #f1f5f9 !important;
+    border-color: #e2e8f0 !important;
+    color: #0369a1 !important;
+  }
+}
+
